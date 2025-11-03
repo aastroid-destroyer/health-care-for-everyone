@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { 
+  ArrowLeft,
   Sun, 
   CloudRain, 
   Snowflake, 
@@ -417,12 +419,17 @@ export default function SeasonalHealthTips() {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
+            <Link href="/">
+              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+            </Link>
+            <div className="flex items-center gap-2">
               <div className="rounded-xl bg-gradient-to-br from-primary to-secondary p-2.5 shadow-md">
                 <Shield className="h-6 w-6 text-primary-foreground" />
               </div>
@@ -435,16 +442,6 @@ export default function SeasonalHealthTips() {
                 </p>
               </div>
             </div>
-            
-            {/* Mobile menu button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
           </div>
         </div>
       </header>
@@ -534,6 +531,6 @@ export default function SeasonalHealthTips() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </main>
   );
 }

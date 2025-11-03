@@ -103,6 +103,15 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Health Tips</span>
               </Button>
             </Link>
+            <Link href="/symptom-awareness" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
+              >
+                <Baby className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-center">Symptom Alert</span>
+              </Button>
+            </Link>
             <Link href="/maternal-health" className="h-full">
               <Button
                 variant="outline"
@@ -112,6 +121,7 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Maternal Track</span>
               </Button>
             </Link>
+
 
 
 
