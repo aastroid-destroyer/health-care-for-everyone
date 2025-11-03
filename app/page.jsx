@@ -66,7 +66,7 @@ export default function Home() {
 
         {/* Quick Actions Grid */}
         <section className="mb-8">
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
             <Link href="/mental-health" className="h-full">
               <Button
                 variant="outline"
@@ -103,15 +103,6 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Health Tips</span>
               </Button>
             </Link>
-            <Link href="/symptom-awareness" className="h-full">
-              <Button
-                variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
-              >
-                <Baby className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Symptom Alert</span>
-              </Button>
-            </Link>
             <Link href="/maternal-health" className="h-full">
               <Button
                 variant="outline"
@@ -121,9 +112,15 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Maternal Track</span>
               </Button>
             </Link>
-
-
-
+            <Link href="/symptom-awareness" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
+              >
+                <Baby className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-center">Symptom Alert</span>
+              </Button>
+            </Link>
 
             <Link href="/volunteers" className="h-full">
               <Button
@@ -134,14 +131,17 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Volunteers</span>
               </Button>
             </Link>
+            <Link href="/communities" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+              >
+                <Heart className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-center">Community</span>
+              </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
-            >
-              <Heart className="h-6 w-6 text-primary" />
-              <span className="text-xs font-semibold text-center">Community</span>
-            </Button>
+
           </div>
         </section>
 
