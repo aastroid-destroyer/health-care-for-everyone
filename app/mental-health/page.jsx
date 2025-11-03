@@ -23,8 +23,8 @@ export default function MentalHealthPage() {
                 <Brain className="h-6 w-6 text-secondary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Mental Health Check-in</h1>
-                <p className="text-sm text-muted-foreground">Monitor your emotional wellness</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">আজ আপনার কেমন লাগছে বলে দিন</h1>
+                <p className="text-sm text-muted-foreground">আপনার প্রতিদিনের মানসিক অবস্থার রেকর্ড রাখুন</p>
               </div>
             </div>
           </div>

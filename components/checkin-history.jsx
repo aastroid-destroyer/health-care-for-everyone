@@ -2,6 +2,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Download } from "lucide-react"
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from "recharts"
 
 const checkInHistory = [
   { date: "Today", mood: "Good", score: 7 },
@@ -28,13 +31,120 @@ function getMoodColor(mood) {
   }
 }
 
+// Custom tooltip for the chart
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-background border rounded-md shadow-md p-2">
+        <p className="text-sm font-medium">{`${payload[0].payload.date}`}</p>
+        <p className="text-sm">{`Mood Score: ${payload[0].value}/10`}</p>
+        <p className="text-sm">{`Mood: ${payload[0].payload.mood}`}</p>
+      </div>
+    )
+  }
+  return null
+}
+
+// Mental Health Chart Component
+function MentalHealthChart() {
+  // Transform data for the chart
+  const chartData = [...checkInHistory].reverse().map((entry, index) => ({
+    ...entry,
+    // Shorten the date for better display on the chart
+    shortDate: entry.date === "Today" ? "T" : 
+               entry.date === "Yesterday" ? "Y" : 
+               entry.date.includes("days ago") ? `${entry.date.split(" ")[0]}d` : 
+               entry.date
+  }))
+
+  return (
+    <div className="h-64 w-full">
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart
+          data={chartData}
+          margin={{
+            top: 10,
+            right: 10,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <defs>
+            <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#8884d8" stopOpacity={0.1}/>
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
+          <XAxis 
+            dataKey="shortDate" 
+            tick={{ fontSize: 12 }}
+            tickLine={false}
+          />
+          <YAxis 
+            domain={[0, 10]} 
+            tick={{ fontSize: 12 }}
+            tickLine={false}
+          />
+          <Tooltip content={<CustomTooltip />} />
+          <Area 
+            type="monotone" 
+            dataKey="score" 
+            stroke="#8884d8" 
+            fillOpacity={1} 
+            fill="url(#colorScore)" 
+            strokeWidth={2}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+// Export function for mental health data
+const exportMentalHealthData = () => {
+  // Create CSV content
+  let csvContent = "data:text/csv;charset=utf-8,"
+  csvContent += "Date,Mood,Score\n"
+  
+  // Add each entry to the CSV
+  checkInHistory.forEach(entry => {
+    csvContent += `"${entry.date}","${entry.mood}",${entry.score}\n`
+  })
+  
+  // Create a download link and trigger the download
+  const encodedUri = encodeURI(csvContent)
+  const link = document.createElement("a")
+  link.setAttribute("href", encodedUri)
+  link.setAttribute("download", `mental_health_history_${new Date().toISOString().split('T')[0]}.csv`)
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 export default function CheckinHistory() {
   return (
     <Card className="border-0 shadow-sm">
-      <CardHeader>
+      <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-base">Check-in History</CardTitle>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={exportMentalHealthData}
+          className="flex items-center gap-1"
+        >
+          <Download className="h-4 w-4" />
+          Export
+        </Button>
       </CardHeader>
       <CardContent>
+        {/* Chart Section */}
+        <div className="mb-6">
+          <h3 className="text-sm font-medium mb-2">Mood Trend</h3>
+          <MentalHealthChart />
+        </div>
+        
+        {/* History List */}
         <div className="space-y-3">
           {checkInHistory.map((entry, i) => (
             <div

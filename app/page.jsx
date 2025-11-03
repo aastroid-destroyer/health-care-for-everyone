@@ -22,8 +22,7 @@ export default function Home() {
                 <Heart className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">ShasthoSheba</h1>
-                <p className="text-sm text-muted-foreground">Community Health Navigator</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">স্বাস্থ্যসেবা</h1>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -59,7 +58,7 @@ export default function Home() {
         {/* Welcome Section */}
         <section className="mb-8">
           <h2 className="text-3xl font-bold tracking-tight text-foreground mb-2">
-            {isAuthenticated ? `Welcome back, ${user?.name || "User"}` : "Welcome to ShasthoSheba"}
+            {isAuthenticated ? `Welcome back, ${user?.name || "User"}` : "স্বাস্থ্যসেবায় আপনাকে স্বাগতম"}
           </h2>
           <p className="text-muted-foreground">Your personalized health dashboard for better wellness</p>
         </section>
@@ -73,7 +72,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <Brain className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Mental Check-in</span>
+                <span className="text-xs font-semibold text-center">How Are Your Feeling/<br/>আপনি কেমন বোধ করছেন</span>
               </Button>
             </Link>
             <Link href="/health-map" className="h-full">
@@ -82,7 +81,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <MapPin className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Find Resources</span>
+                <span className="text-xs font-semibold text-center">Find Resources/<br/>খুঁজে বের করুন</span>
               </Button>
             </Link>
             <Link href="/anonymous-request" className="h-full">
@@ -91,7 +90,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <Brain className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Anonymous</span>
+                <span className="text-xs font-semibold text-center">Anonymous message/<br/>আপনার গোপন সমস্যা বলুন</span>
               </Button>
             </Link>
             <Link href="/seasonal-tips" className="h-full">
@@ -100,7 +99,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <Activity className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Health Tips</span>
+                <span className="text-xs font-semibold text-center">Health Tips/ <br/>স্বাস্থ্য পরামর্শ</span>
               </Button>
             </Link>
             <Link href="/maternal-health" className="h-full">
@@ -109,7 +108,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
               >
                 <Baby className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Maternal Track</span>
+                <span className="text-xs font-semibold text-center">Maternal Track/<br/>মাতৃত্ব পর্যবেক্ষণ</span>
               </Button>
             </Link>
             <Link href="/symptom-awareness" className="h-full">
@@ -118,7 +117,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
               >
                 <Baby className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Symptom Alert</span>
+                <span className="text-xs font-semibold text-center">Symptom Alert/<br/>ঝুঁকিপূর্ণ রোগের উপসর্গ</span>
               </Button>
             </Link>
 
@@ -128,7 +127,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <Users className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Volunteers</span>
+                <span className="text-xs font-semibold text-center">Volunteers/<br/>আপনার সাহায্য সেবায় নিয়যিত যারা</span>
               </Button>
             </Link>
             <Link href="/communities" className="h-full">
@@ -137,7 +136,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
               >
                 <Heart className="h-6 w-6 text-primary" />
-                <span className="text-xs font-semibold text-center">Community</span>
+                <span className="text-xs font-semibold text-center">Community/<br/>সকলের সাথে যুক্ত হোন</span>
               </Button>
             </Link>
 

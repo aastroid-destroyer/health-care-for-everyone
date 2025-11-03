@@ -1,0 +1,71 @@
+{
+    "moodOptions": [
+        {
+            "value": 1,
+            "label": "Stressed",
+            "color": "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-200"
+        },
+        {
+            "value": 2,
+            "label": "Anxious",
+            "color": "bg-orange-100 text-orange-800 dark:bg-orange-950/40 dark:text-orange-200"
+        },
+        {
+            "value": 3,
+            "label": "Neutral",
+            "color": "bg-yellow-100 text-yellow-800 dark:bg-yellow-950/40 dark:text-yellow-200"
+        },
+        {
+            "value": 4,
+            "label": "Good",
+            "color": "bg-lime-100 text-lime-800 dark:bg-lime-950/40 dark:text-lime-200"
+        },
+        {
+            "value": 5,
+            "label": "Excellent",
+            "color": "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-200"
+        }
+    ],
+    "checkInQuestions": [
+        {
+            "id": "sleep",
+            "label": "How is your sleep quality?",
+            "options": [
+                "Poor",
+                "Fair",
+                "Good",
+                "Excellent"
+            ]
+        },
+        {
+            "id": "stress",
+            "label": "What is your stress level?",
+            "options": [
+                "Very High",
+                "High",
+                "Medium",
+                "Low"
+            ]
+        },
+        {
+            "id": "energy",
+            "label": "How is your energy level?",
+            "options": [
+                "Low",
+                "Medium",
+                "High",
+                "Very High"
+            ]
+        },
+        {
+            "id": "support",
+            "label": "Do you have adequate support?",
+            "options": [
+                "No",
+                "Somewhat",
+                "Yes",
+                "Very Much"
+            ]
+        }
+    ]
+}
