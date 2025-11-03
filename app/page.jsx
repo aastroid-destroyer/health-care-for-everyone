@@ -94,6 +94,15 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Anonymous</span>
               </Button>
             </Link>
+            <Link href="/seasonal-tips" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+              >
+                <Activity className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-center">Health Tips</span>
+              </Button>
+            </Link>
             <Link href="/maternal-health" className="h-full">
               <Button
                 variant="outline"
@@ -103,14 +112,8 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Maternal Track</span>
               </Button>
             </Link>
-            
-            <Button
-              variant="outline"
-              className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
-            >
-              <Activity className="h-6 w-6 text-primary" />
-              <span className="text-xs font-semibold text-center">Health Log</span>
-            </Button>
+
+
 
             <Link href="/volunteers" className="h-full">
               <Button
