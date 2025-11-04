@@ -524,7 +524,7 @@ export default function SeasonalHealthTips() {
                 <p className="text-sm text-blue-800 mt-1">
                   These prevention tips are based on guidelines from the Bangladesh Ministry of Health, 
                   WHO, and UNICEF. They are tailored to Bangladesh's climate patterns and common seasonal diseases. 
-                  Always consult healthcare professionals for medical advice.
+                  Always consult healthcare professionals for medical advice..
                 </p>
               </div>
             </div>
