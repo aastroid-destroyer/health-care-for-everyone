@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart, Brain, Baby, MapPin, Users, Activity, LogIn, LogOut } from "lucide-react"
+import { Heart, Brain, Baby, MapPin, Users, Activity, LogIn, LogOut, Home as HomeIcon, Voicemail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import HealthOverview from "@/components/health-overview"
@@ -13,9 +13,9 @@ export default function Home() {
   const { user, isAuthenticated } = useAuth()
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/50">
+    <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
       {/* Header */}
-      <header className="top-0 z-50 border-b border-border bg-primary/30">
+      <header className="top-0 z-50 border-b border-border bg-primary/40">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -26,14 +26,27 @@ export default function Home() {
                 <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-foreground">স্বাস্থ্যসেবা</h1>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            
+            {/* Navigation Links */}
+            <nav className="flex items-center gap-2 md:gap-4">
+              <Link href="/" className="flex items-center gap-2 text-primary-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-primary/10">
+                <HomeIcon className="h-4 w-4" />
+                <span className="hidden sm:inline">Home</span>
+              </Link>
+              <Link href="voice-api" className="flex items-center gap-2 text-primary-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-primary/10">
+                <Voicemail className="h-4 w-4" />
+                <span className="hidden sm:inline">Voice</span>
+              </Link>
+              <Link href="seasonal-tips" className="flex items-center gap-2 text-primary-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-primary/10">
+                <Activity className="h-4 w-4" />
+                <span className="hidden sm:inline">Health Tips</span>
+              </Link>
+              
               {isAuthenticated ? (
                 <>
-                  <Link href="/profile">
-                    <Button variant="" className="gap-2 bg-primary/70 hover:bg-primary/90 hover:shadow-xl">
-                      <Users className="h-4 w-4" />
-                      <span className="hidden sm:inline">{user?.name || "Profile"}</span>
-                    </Button>
+                  <Link href="/profile" className="flex items-center gap-2 text-primary-foreground hover:text-primary transition-colors px-2 py-1 rounded-md hover:bg-primary/10">
+                    <Users className="h-4 w-4" />
+                    <span className="hidden sm:inline">Profile</span>
                   </Link>
                   <Link href="/auth/logout">
                     <Button variant="" size="icon" className="gap-2 bg-primary/70 hover:bg-primary/90 hover:shadow-xl">
@@ -49,7 +62,7 @@ export default function Home() {
                   </Button>
                 </Link>
               )}
-            </div>
+            </nav>
           </div>
         </div>
       </header>
