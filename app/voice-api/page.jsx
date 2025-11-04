@@ -246,11 +246,11 @@ export default function VoiceFirstHealthAssistant() {
             </Link>
             <div className="flex items-center gap-2">
               <div className="rounded-xl bg-gradient-to-br from-secondary to-primary p-2.5 shadow-md">
-                <Mic className="h-6 w-6 text-secondary-foreground" />
+                <Mic className="h-5 w-5 md:h-6 md:w-6 text-secondary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">ভয়েস-ফার্স্ট হেলথ অ্যাসিস্ট্যান্ট</h1>
-                <p className="text-sm text-muted-foreground">আপনার স্বাস্থ্য সম্পর্কে তথ্য পান কথা বলে</p>
+                <h1 className="text-lg md:text-xl lg:text-2xl font-bold tracking-tight text-foreground">ভয়েস-ফার্স্ট হেলথ অ্যাসিস্ট্যান্ট</h1>
+                <p className="text-xs md:text-sm text-muted-foreground">আপনার স্বাস্থ্য সম্পর্কে তথ্য পান কথা বলে</p>
               </div>
             </div>
           </div>
@@ -258,25 +258,25 @@ export default function VoiceFirstHealthAssistant() {
       </header>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-6 md:py-8">
         {!isSupported && (
-          <div className="mb-6 rounded-lg bg-red-50 p-4 border border-red-200">
-            <p className="text-sm text-red-800">
+          <div className="mb-6 rounded-lg bg-red-50 p-3 md:p-4 border border-red-200">
+            <p className="text-xs md:text-sm text-red-800">
               আপনার ব্রাউজার ভয়েস রিকগনিশন সমর্থন করে না। অনুগ্রহ করে Chrome, Safari বা Edge ব্রাউজারের সর্বশেষ সংস্করণ ব্যবহার করুন।
             </p>
           </div>
         )}
         
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* Voice Interaction Area */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 md:space-y-6">
             <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Mic className="h-5 w-5" />
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                  <Mic className="h-4 w-4 md:h-5 md:w-5" />
                   ভয়েস ইন্টারঅ্যাকশন
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-sm md:text-base">
                   মাইক্রোফোন বোতামে ক্লিক করে আপনার প্রশ্নটি বলুন
                 </CardDescription>
               </CardHeader>
@@ -286,25 +286,25 @@ export default function VoiceFirstHealthAssistant() {
                     size="lg"
                     onClick={toggleListening}
                     disabled={!isSupported}
-                    className={`h-20 w-20 rounded-full ${isListening ? "bg-red-500 hover:bg-red-600" : "bg-primary hover:bg-primary/90"} ${!isSupported ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`h-16 w-16 md:h-20 md:w-20 rounded-full ${isListening ? "bg-red-500 hover:bg-red-600" : "bg-primary hover:bg-primary/90"} ${!isSupported ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    {isListening ? <MicOff className="h-8 w-8" /> : <Mic className="h-8 w-8" />}
+                    {isListening ? <MicOff className="h-6 w-6 md:h-8 md:w-8" /> : <Mic className="h-6 w-6 md:h-8 md:w-8" />}
                   </Button>
                 </div>
                 
                 {transcript && (
-                  <div className="rounded-lg bg-muted p-4">
-                    <p className="text-sm font-medium text-muted-foreground mb-1">আপনি বলেছেন:</p>
-                    <p className="text-lg">{transcript}</p>
+                  <div className="rounded-lg bg-muted p-3 md:p-4">
+                    <p className="text-xs md:text-sm font-medium text-muted-foreground mb-1">আপনি বলেছেন:</p>
+                    <p className="text-sm md:text-lg">{transcript}</p>
                   </div>
                 )}
                 
                 {response && (
-                  <div className="rounded-lg bg-primary/10 p-4">
+                  <div className="rounded-lg bg-primary/10 p-3 md:p-4">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-muted-foreground mb-1">প্রতিক্রিয়া:</p>
-                        <p className="text-lg">{response}</p>
+                        <p className="text-xs md:text-sm font-medium text-muted-foreground mb-1">প্রতিক্রিয়া:</p>
+                        <p className="text-sm md:text-lg">{response}</p>
                       </div>
                       {isSpeaking && (
                         <Button
@@ -324,9 +324,9 @@ export default function VoiceFirstHealthAssistant() {
 
             {/* Voice Commands */}
             <Card>
-              <CardHeader>
-                <CardTitle>সাধারণ কমান্ড</CardTitle>
-                <CardDescription>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg md:text-xl">সাধারণ কমান্ড</CardTitle>
+                <CardDescription className="text-sm md:text-base">
                   এই কমান্ডগুলি ব্যবহার করে দ্রুত তথ্য পান
                 </CardDescription>
               </CardHeader>
@@ -338,15 +338,15 @@ export default function VoiceFirstHealthAssistant() {
                       <Button
                         key={item.id}
                         variant="outline"
-                        className="justify-start h-auto p-4 text-left"
+                        className="justify-start h-auto p-3 md:p-4 text-left"
                         onClick={() => handleCommandClick(item.command)}
                       >
                         <div className="flex items-center gap-3">
                           <div className="rounded-full bg-primary/10 p-2">
-                            <Icon className="h-5 w-5 text-primary" />
+                            <Icon className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                           </div>
                           <div>
-                            <p className="font-medium">{item.command}</p>
+                            <p className="text-sm md:font-medium">{item.command}</p>
                             <p className="text-xs text-muted-foreground">{item.description}</p>
                           </div>
                         </div>
@@ -359,48 +359,48 @@ export default function VoiceFirstHealthAssistant() {
           </div>
 
           {/* Sidebar - Information */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Volume2 className="h-5 w-5" />
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                  <Volume2 className="h-4 w-4 md:h-5 md:w-5" />
                   কিভাবে ব্যবহার করবেন
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
+                  <span className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
                     1
                   </span>
-                  <p className="text-sm">মাইক্রোফোন বোতামে ক্লিক করুন</p>
+                  <p className="text-xs md:text-sm">মাইক্রোফোন বোতামে ক্লিক করুন</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
+                  <span className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
                     2
                   </span>
-                  <p className="text-sm">আপনার প্রশ্নটি স্পষ্টভাবে বলুন</p>
+                  <p className="text-xs md:text-sm">আপনার প্রশ্নটি স্পষ্টভাবে বলুন</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
+                  <span className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary">
                     3
                   </span>
-                  <p className="text-sm">উত্তর শুনুন বা পড়ুন</p>
+                  <p className="text-xs md:text-sm">উত্তর শুনুন বা পড়ুন</p>
                 </div>
               </CardContent>
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle>গুরুত্বপূর্ণ তথ্য</CardTitle>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg md:text-xl">গুরুত্বপূর্ণ তথ্য</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="rounded-lg bg-amber-50 p-3 border border-amber-200">
-                  <p className="text-sm text-amber-800">
+                  <p className="text-xs md:text-sm text-amber-800">
                     এটি একটি সহায়ক সরঞ্জাম, চিকিৎসকের পরামর্শের বিকল্প নয়। জরুরি অবস্থায় অবিলম্বে চিকিৎসকের সাহায্য নিন।
                   </p>
                 </div>
                 <div className="rounded-lg bg-blue-50 p-3 border border-blue-200">
-                  <p className="text-sm text-blue-800">
+                  <p className="text-xs md:text-sm text-blue-800">
                     জরুরি সাহায্যের জন্য ৯৯৯ নম্বরে কল করুন।
                   </p>
                 </div>
@@ -408,16 +408,16 @@ export default function VoiceFirstHealthAssistant() {
             </Card>
 
             <Card>
-              <CardHeader>
-                <CardTitle>ভাষা সমর্থন</CardTitle>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg md:text-xl">ভাষা সমর্থন</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs md:text-sm text-muted-foreground">
                   বর্তমানে আমরা বাংলা ভাষায় সমর্থন প্রদান করছি। ভবিষ্যতে আরও ভাষা যোগ করা হবে।
                 </p>
                 <div className="mt-3 flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                  <span className="text-sm">বাংলা (সক্রিয়)</span>
+                  <span className="text-xs md:text-sm">বাংলা (সক্রিয়)</span>
                 </div>
               </CardContent>
             </Card>

@@ -23,20 +23,20 @@ export default function Home() {
                 <Heart className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">স্বাস্থ্যসেবা</h1>
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-foreground">স্বাস্থ্যসেবা</h1>
               </div>
             </div>
             <div className="flex items-center gap-2">
               {isAuthenticated ? (
                 <>
                   <Link href="/profile">
-                    <Button variant="outline" className="gap-2 bg-transparent hover:bg-primary/10">
+                    <Button variant="" className="gap-2 bg-primary/70 hover:bg-primary/90 hover:shadow-xl">
                       <Users className="h-4 w-4" />
-                      {user?.name || "Profile"}
+                      <span className="hidden sm:inline">{user?.name || "Profile"}</span>
                     </Button>
                   </Link>
                   <Link href="/auth/logout">
-                    <Button variant="outline" size="icon" className="gap-2 bg-transparent hover:bg-destructive/10">
+                    <Button variant="" size="icon" className="gap-2 bg-primary/70 hover:bg-primary/90 hover:shadow-xl">
                       <LogOut className="h-4 w-4" />
                     </Button>
                   </Link>
@@ -45,7 +45,7 @@ export default function Home() {
                 <Link href="/auth/login">
                   <Button className="gap-2">
                     <LogIn className="h-4 w-4" />
-                    Login
+                    <span className="hidden sm:inline">Login</span>
                   </Button>
                 </Link>
               )}
@@ -58,22 +58,31 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
         <section className="mb-8">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground mb-2">
-            {isAuthenticated ? `Welcome back, ${user?.name || "User"}` : "স্বাস্থ্যসেবায় আপনাকে স্বাগতম"}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-2">
+            {isAuthenticated ? `স্বাগতম, ${user?.name || "User"}` : "স্বাস্থ্যসেবায় আপনাকে স্বাগতম"}
           </h2>
-          <p className="text-muted-foreground">Your personalized health dashboard for better wellness</p>
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground">Your personalized health dashboard for better wellness</p>
         </section>
 
         {/* Quick Actions Grid */}
         <section className="mb-8">
           <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-3">
+            <Link href="/voice-api" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
+              >
+                <Heart className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Voice Helping/<br />ভয়েস এ কথা বলুন</span>
+              </Button>
+            </Link>
             <Link href="/mental-health" className="h-full">
               <Button
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <Brain className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">How Are Your Feeling/<br/>আপনি কেমন বোধ করছেন</span>
+                <Brain className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">How Are Your Feeling/<br />আপনি কেমন বোধ করছেন</span>
               </Button>
             </Link>
             <Link href="/health-map" className="h-full">
@@ -81,8 +90,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <MapPin className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Find Resources/<br/>খুঁজে বের করুন</span>
+                <MapPin className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Find Resources/<br />খুঁজে বের করুন</span>
               </Button>
             </Link>
             <Link href="/anonymous-request" className="h-full">
@@ -90,8 +99,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <Brain className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Anonymous message/<br/>আপনার গোপন সমস্যা বলুন</span>
+                <Brain className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Anonymous message/<br />আপনার গোপন সমস্যা বলুন</span>
               </Button>
             </Link>
             <Link href="/seasonal-tips" className="h-full">
@@ -99,8 +108,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <Activity className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Health Tips/ <br/>স্বাস্থ্য পরামর্শ</span>
+                <Activity className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Health Tips/ <br />স্বাস্থ্য পরামর্শ</span>
               </Button>
             </Link>
             <Link href="/maternal-health" className="h-full">
@@ -108,8 +117,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all dark:from-pink-950/20"
               >
-                <Baby className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Maternal Track/<br/>মাতৃত্ব পর্যবেক্ষণ</span>
+                <Baby className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Maternal Track/<br />মাতৃত্ব পর্যবেক্ষণ</span>
               </Button>
             </Link>
             <Link href="/symptom-awareness" className="h-full">
@@ -117,8 +126,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all dark:from-pink-950/20"
               >
-                <Baby className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Symptom Alert/<br/>ঝুঁকিপূর্ণ রোগের উপসর্গ</span>
+                <Baby className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Symptom Alert/<br />ঝুঁকিপূর্ণ রোগের উপসর্গ</span>
               </Button>
             </Link>
 
@@ -127,8 +136,8 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <Users className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Volunteers/<br/>আপনার সাহায্য সেবায় নিয়যিত যারা</span>
+                <Users className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Volunteers/<br />আপনার সাহায্য সেবায় নিয়যিত যারা</span>
               </Button>
             </Link>
             <Link href="/communities" className="h-full">
@@ -136,21 +145,10 @@ export default function Home() {
                 variant="outline"
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
-                <Heart className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Community/<br/>সকলের সাথে যুক্ত হোন</span>
+                <Heart className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Community/<br />সকলের সাথে যুক্ত হোন</span>
               </Button>
             </Link>
-            <Link href="/voice-api" className="h-full">
-              <Button
-                variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
-              >
-                <Heart className="h-6 w-6 text-primary" />
-                <span className="text-s font-semibold text-center">Voice Helping/<br/>ভয়েস এ কথা বলুন</span>
-              </Button>
-            </Link>
-
-
           </div>
         </section>
 
@@ -171,38 +169,38 @@ export default function Home() {
             <section className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-4">
               <Card className="border-0 bg-gradient-to-br from-primary/10 to-accent/5 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Health Score</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Health Score</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-primary">78/100</div>
-                  <p className="text-xs text-muted-foreground mt-1">Good overall health</p>
+                  <div className="text-2xl md:text-3xl font-bold text-primary">78/100</div>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Good overall health</p>
                 </CardContent>
               </Card>
               <Card className="border-0 bg-gradient-to-br from-secondary/10 to-primary/5 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Check-ins</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Check-ins</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-secondary">12</div>
-                  <p className="text-xs text-muted-foreground mt-1">This month</p>
+                  <div className="text-2xl md:text-3xl font-bold text-secondary">12</div>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">This month</p>
                 </CardContent>
               </Card>
               <Card className="border-0 bg-gradient-to-br from-accent/10 to-secondary/5 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Resources</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Resources</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-accent">24</div>
-                  <p className="text-xs text-muted-foreground mt-1">Nearby clinics</p>
+                  <div className="text-2xl md:text-3xl font-bold text-accent">24</div>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Nearby clinics</p>
                 </CardContent>
               </Card>
               <Card className="border-0 bg-gradient-to-br from-primary/10 to-secondary/5 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">Community</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium text-muted-foreground">Community</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-primary">156</div>
-                  <p className="text-xs text-muted-foreground mt-1">Members active</p>
+                  <div className="text-2xl md:text-3xl font-bold text-primary">156</div>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">Members active</p>
                 </CardContent>
               </Card>
             </section>
@@ -211,15 +209,15 @@ export default function Home() {
           <Card className="border-0 shadow-lg bg-primary/10">
             <CardContent className="pt-8 pb-8">
               <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold">Get Started</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">Get Started</h3>
+                <p className="text-sm md:text-base lg:text-lg text-muted-foreground">
                   Create an account or login to access your personalized health dashboard.
                 </p>
                 <div className="flex gap-4 justify-center pt-4">
                   <Link href="/auth/login">
                     <Button className="gap-2">
                       <LogIn className="h-4 w-4" />
-                      Login / Sign Up
+                      <span className="hidden sm:inline">Login / Sign Up</span>
                     </Button>
                   </Link>
                 </div>

@@ -191,7 +191,7 @@ export default function AnonymousHelpCenter() {
             </div>
 
             <div className="flex gap-3 items-center">
-              <Button type="submit" className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary text-white shadow-md hover:opacity-90 transition-all" aria-disabled={loading} onClick={handleSubmit}>
+              <Button type="submit" className="flex items-center gap-2 rounded-xl bg-primary/80 text-white shadow-md hover:opacity-90 transition-all" aria-disabled={loading} onClick={handleSubmit}>
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                 ) : null}
@@ -255,7 +255,7 @@ export default function AnonymousHelpCenter() {
             {/* Trust indicator */}
             {showTrust && (
               <div
-                className={`mt-4 p-3 rounded-xl flex items-center gap-3 bg-background/60 border border-border transition-opacity duration-500 ${
+                className={`mt-4 p-3 rounded-xl flex items-center gap-3 bg-primary/10 border border-border transition-opacity duration-500 ${
                   mounted ? 'opacity-100' : 'opacity-0'
                 }`}
               >
@@ -269,7 +269,7 @@ export default function AnonymousHelpCenter() {
               </div>
             )}
 
-            <div className="text-xs text-muted-foreground mt-2">Tip: Your draft is saved locally to your device so you won't lose your message on refresh./টিপ: আপনার ড্রাফট আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত হয় যাতে রিফ্রেশের পরে আপনি আপনার বার্তা হারাবেন না।</div>
+            <div className="text-xs bg-secondary/20 rounded-full text-muted-foreground mt-2">Tip: Your draft is saved locally to your device so you won't lose your message on refresh./টিপ: আপনার ড্রাফট আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত হয় যাতে রিফ্রেশের পরে আপনি আপনার বার্তা হারাবেন না।</div>
           </div>
         </div>
 
@@ -282,7 +282,7 @@ export default function AnonymousHelpCenter() {
           >
             {RESOURCE_CARDS.map((r) => (
               <div key={r.id} className="block">
-                <Card className="rounded-xl border border-border bg-background/60 backdrop-blur-sm hover:shadow-md transition-shadow">
+                <Card className="rounded-xl border border-border bg-primary/10 backdrop-blur-sm hover:shadow-md transition-shadow">
                   <CardContent>
                     <div className="flex items-start gap-3">
                       <div className="p-2 rounded-lg bg-secondary/20">
