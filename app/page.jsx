@@ -150,7 +150,7 @@ export default function Home() {
                 className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Users className="h-10 w-10 md:h-12 md:w-12 lg:h-20 lg:w-20 text-primary" />
-                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Volunteers/<br />আপনার সাহায্য সেবায় নিয়যিত যারা</span>
+                <span className="text-xs md:text-sm lg:text-base font-semibold text-center">Volunteers/<br />সেচ্ছাসেবক</span>
               </Button>
             </Link>
             <Link href="/communities" className="h-full">
