@@ -3,12 +3,17 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { Heart, Mail, Lock } from "lucide-react"
+import { Heart, Mail, Lock, LogIn } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { loginUser, registerUser } from "@/lib/auth"
 import { useAuth } from "@/components/auth-provider"
+
+// Firebase imports
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { app } from "../../firebase/config"
+ // make sure your Firebase app is initialized here
 
 export default function LoginPage() {
   const router = useRouter()
@@ -49,6 +54,34 @@ export default function LoginPage() {
       }
     } catch (err) {
       setError(err.message || "An error occurred")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // Firebase Google Sign-In
+  const handleGoogleSignIn = async () => {
+    setLoading(true)
+    setError("")
+    const auth = getAuth(app)
+    const provider = new GoogleAuthProvider()
+
+    try {
+      const result = await signInWithPopup(auth, provider)
+      const user = result.user
+
+      // You can also send this user to your backend for registration/login
+      setUser({
+        name: user.displayName,
+        email: user.email,
+        uid: user.uid,
+        photoURL: user.photoURL,
+      })
+      setIsAuthenticated(true)
+      router.push("/")
+    } catch (err) {
+      console.error(err)
+      setError(err.message || "Google sign-in failed")
     } finally {
       setLoading(false)
     }
@@ -127,8 +160,27 @@ export default function LoginPage() {
                 {loading ? "Loading..." : mode === "login" ? "Login" : "Create Account"}
               </Button>
 
+              {/* OR Divider */}
+              <div className="flex items-center justify-center gap-2 my-2 text-sm text-muted-foreground">
+                <span className="flex-grow border-t border-muted/50"></span>
+                OR
+                <span className="flex-grow border-t border-muted/50"></span>
+              </div>
+
+              {/* Google Sign-In */}
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleGoogleSignIn}
+                className="w-full flex items-center justify-center gap-2"
+                disabled={loading}
+              >
+                <LogIn className="h-4 w-4" />
+                Sign in with Google
+              </Button>
+
               {/* Toggle Mode */}
-              <p className="text-center text-sm text-muted-foreground">
+              <p className="text-center text-sm text-muted-foreground mt-4">
                 {mode === "login" ? "Don't have an account? " : "Already have an account? "}
                 <button
                   type="button"
