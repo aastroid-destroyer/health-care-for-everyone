@@ -139,6 +139,15 @@ export default function Home() {
                 <span className="text-xs font-semibold text-center">Community/<br/>সকলের সাথে যুক্ত হোন</span>
               </Button>
             </Link>
+            <Link href="/voice-api" className="h-full">
+              <Button
+                variant="outline"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
+              >
+                <Heart className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-center">Voice Helping/<br/>ভয়েস এ কথা বলুন</span>
+              </Button>
+            </Link>
 
 
           </div>

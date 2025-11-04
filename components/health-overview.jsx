@@ -5,13 +5,13 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { CheckCircle2, AlertCircle, TrendingUp } from "lucide-react"
 
 const healthData = [
-  { date: "Mon", score: 72, checkups: 1 },
-  { date: "Tue", score: 75, checkups: 0 },
-  { date: "Wed", score: 78, checkups: 1 },
-  { date: "Thu", score: 76, checkups: 0 },
-  { date: "Fri", score: 80, checkups: 1 },
-  { date: "Sat", score: 82, checkups: 2 },
-  { date: "Sun", score: 78, checkups: 0 },
+  { date: "Mon / সোম", score: 72, checkups: 1 },
+  { date: "Tue / মঙ্গল", score: 75, checkups: 0 },
+  { date: "Wed / বুধ", score: 78, checkups: 1 },
+  { date: "Thu / বৃহস্পতি", score: 76, checkups: 0 },
+  { date: "Fri / শুক্র", score: 80, checkups: 1 },
+  { date: "Sat / শনি", score: 82, checkups: 2 },
+  { date: "Sun / রবি", score: 78, checkups: 0 },
 ]
 
 export default function HealthOverview() {
@@ -23,11 +23,11 @@ export default function HealthOverview() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-primary" />
-              <CardTitle className="text-lg">Health Score Trend</CardTitle>
+              <CardTitle className="text-lg">Health Score Trend / স্বাস্থ্য স্কোর প্রবণতা</CardTitle>
             </div>
             <div className="text-3xl font-bold text-primary">78</div>
           </div>
-          <p className="text-sm text-muted-foreground mt-1">Week average - Improving trend</p>
+          <p className="text-sm text-muted-foreground mt-1">Week average - Improving trend / সপ্তাহের গড় - উন্নতির প্রবণতা</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={200}>
@@ -62,12 +62,12 @@ export default function HealthOverview() {
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
-              <CardTitle className="text-sm font-medium text-muted-foreground">Completed</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Completed / সম্পন্ন</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600 dark:text-green-400">4</div>
-            <p className="text-xs text-muted-foreground mt-1">This week</p>
+            <p className="text-xs text-muted-foreground mt-1">This week / এই সপ্তাহে</p>
           </CardContent>
         </Card>
 
@@ -75,12 +75,12 @@ export default function HealthOverview() {
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
               <AlertCircle className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-              <CardTitle className="text-sm font-medium text-muted-foreground">Pending</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Pending / অপেক্ষমান</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">2</div>
-            <p className="text-xs text-muted-foreground mt-1">Follow-ups needed</p>
+            <p className="text-xs text-muted-foreground mt-1">Follow-ups needed / অনুসরণ প্রয়োজন</p>
           </CardContent>
         </Card>
       </div>
@@ -88,8 +88,8 @@ export default function HealthOverview() {
       {/* Activity Breakdown */}
       <Card className="border-0 shadow-sm hover:shadow-md transition-shadow">
         <CardHeader>
-          <CardTitle className="text-base">Weekly Activity</CardTitle>
-          <p className="text-sm text-muted-foreground mt-1">Checkups and activities per day</p>
+          <CardTitle className="text-base">Weekly Activity / সাপ্তাহিক কার্যকলাপ</CardTitle>
+          <p className="text-sm text-muted-foreground mt-1">Checkups and activities per day / প্রতিদিনের পরীক্ষা এবং কার্যকলাপ</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={150}>
