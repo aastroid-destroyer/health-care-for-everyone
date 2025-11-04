@@ -14,28 +14,28 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 // ANC visit schedule (weeks of pregnancy)
 const ANC_VISITS = [
-  { id: 1, week: 12, name: "First ANC Visit", description: "Initial checkup and blood tests" },
-  { id: 2, week: 20, name: "Second ANC Visit", description: "Anomaly scan and routine checkup" },
-  { id: 3, week: 26, name: "Third ANC Visit", description: "Growth assessment and anemia screening" },
-  { id: 4, week: 30, name: "Fourth ANC Visit", description: "Routine checkup and birth plan" },
-  { id: 5, week: 34, name: "Fifth ANC Visit", description: "Final checkup before delivery" },
+  { id: 1, week: 12, name: "First ANC Visit/প্রথম এএনসি সফর", description: "Initial checkup and blood tests/প্রাথমিক পরীক্ষা এবং রক্ত পরীক্ষা" },
+  { id: 2, week: 20, name: "Second ANC Visit/দ্বিতীয় এএনসি সফর", description: "Anomaly scan and routine checkup/অস্বাভাবিকতা স্ক্যান এবং নিয়মিত পরীক্ষা" },
+  { id: 3, week: 26, name: "Third ANC Visit/তৃতীয় এএনসি সফর", description: "Growth assessment and anemia screening/বৃদ্ধি মূল্যায়ন এবং রক্তস্বল্পতা স্ক্রীনিং" },
+  { id: 4, week: 30, name: "Fourth ANC Visit/চতুর্থ এএনসি সফর", description: "Routine checkup and birth plan/নিয়মিত পরীক্ষা এবং প্রসব পরিকল্পনা" },
+  { id: 5, week: 34, name: "Fifth ANC Visit/পঞ্চম এএনসি সফর", description: "Final checkup before delivery/প্রসবের আগে চূড়ান্ত পরীক্ষা" },
 ]
 
 // EPI vaccination schedule (Bangladesh)
 const VACCINE_SCHEDULE = [
-  { id: 1, name: "BCG", dueAt: "At birth", description: "Tuberculosis vaccine" },
-  { id: 2, name: "OPV-0", dueAt: "At birth", description: "Polio vaccine - birth dose" },
-  { id: 3, name: "OPV-1", dueAt: "6 weeks", description: "Polio vaccine - first dose" },
-  { id: 4, name: "DPT-HepB-Hib-1", dueAt: "6 weeks", description: "Pentavalent vaccine - first dose" },
-  { id: 5, name: "PCV-1", dueAt: "6 weeks", description: "Pneumococcal vaccine - first dose" },
-  { id: 6, name: "OPV-2", dueAt: "10 weeks", description: "Polio vaccine - second dose" },
-  { id: 7, name: "DPT-HepB-Hib-2", dueAt: "10 weeks", description: "Pentavalent vaccine - second dose" },
-  { id: 8, name: "PCV-2", dueAt: "10 weeks", description: "Pneumococcal vaccine - second dose" },
-  { id: 9, name: "OPV-3", dueAt: "14 weeks", description: "Polio vaccine - third dose" },
-  { id: 10, name: "DPT-HepB-Hib-3", dueAt: "14 weeks", description: "Pentavalent vaccine - third dose" },
-  { id: 11, name: "PCV-3", dueAt: "14 weeks", description: "Pneumococcal vaccine - third dose" },
-  { id: 12, name: "MR-1", dueAt: "9 months", description: "Measles-Rubella vaccine - first dose" },
-  { id: 13, name: "JE-1", dueAt: "9 months", description: "Japanese Encephalitis vaccine - first dose" },
+  { id: 1, name: "BCG", dueAt: "At birth/জন্মের সময়", description: "Tuberculosis vaccine/যক্ষ্মা টিকা" },
+  { id: 2, name: "OPV-0", dueAt: "At birth/জন্মের সময়", description: "Polio vaccine - birth dose/পোলিও টিকা - জন্ম ডোজ" },
+  { id: 3, name: "OPV-1", dueAt: "6 weeks/৬ সপ্তাহ", description: "Polio vaccine - first dose/পোলিও টিকা - প্রথম ডোজ" },
+  { id: 4, name: "DPT-HepB-Hib-1", dueAt: "6 weeks/৬ সপ্তাহ", description: "Pentavalent vaccine - first dose/পেন্টাভ্যালেন্ট টিকা - প্রথম ডোজ" },
+  { id: 5, name: "PCV-1", dueAt: "6 weeks/৬ সপ্তাহ", description: "Pneumococcal vaccine - first dose/নিউমোকক্কাল টিকা - প্রথম ডোজ" },
+  { id: 6, name: "OPV-2", dueAt: "10 weeks/১০ সপ্তাহ", description: "Polio vaccine - second dose/পোলিও টিকা - দ্বিতীয় ডোজ" },
+  { id: 7, name: "DPT-HepB-Hib-2", dueAt: "10 weeks/১০ সপ্তাহ", description: "Pentavalent vaccine - second dose/পেন্টাভ্যালেন্ট টিকা - দ্বিতীয় ডোজ" },
+  { id: 8, name: "PCV-2", dueAt: "10 weeks/১০ সপ্তাহ", description: "Pneumococcal vaccine - second dose/নিউমোকক্কাল টিকা - দ্বিতীয় ডোজ" },
+  { id: 9, name: "OPV-3", dueAt: "14 weeks/১৪ সপ্তাহ", description: "Polio vaccine - third dose/পোলিও টিকা - তৃতীয় ডোজ" },
+  { id: 10, name: "DPT-HepB-Hib-3", dueAt: "14 weeks/১৪ সপ্তাহ", description: "Pentavalent vaccine - third dose/পেন্টাভ্যালেন্ট টিকা - তৃতীয় ডোজ" },
+  { id: 11, name: "PCV-3", dueAt: "14 weeks/১৪ সপ্তাহ", description: "Pneumococcal vaccine - third dose/নিউমোকক্কাল টিকা - তৃতীয় ডোজ" },
+  { id: 12, name: "MR-1", dueAt: "9 months/৯ মাস", description: "Measles-Rubella vaccine - first dose/হাম-রুবেলা টিকা - প্রথম ডোজ" },
+  { id: 13, name: "JE-1", dueAt: "9 months/৯ মাস", description: "Japanese Encephalitis vaccine - first dose/জাপানি এনসেফালাইটিস টিকা - প্রথম ডোজ" },
 ]
 
 // Custom Chart Component for ANC Visits
@@ -63,7 +63,7 @@ function ANCVisitChart({ currentWeek, completedVisits }) {
     <div className="w-full h-full p-4">
       <div className="relative h-full">
         {/* Chart Title */}
-        <h3 className="text-sm font-medium text-center mb-2">ANC Visit Timeline</h3>
+        <h3 className="text-sm font-medium text-center mb-2">ANC Visit Timeline/এএনসি সফরের সময়রেখা</h3>
         
         {/* Chart Area */}
         <div className="relative h-40">
@@ -126,15 +126,15 @@ function ANCVisitChart({ currentWeek, completedVisits }) {
         <div className="flex justify-center gap-4 mt-4">
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-xs">Completed</span>
+            <span className="text-xs">Completed/সম্পন্ন</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-gray-400"></div>
-            <span className="text-xs">Upcoming</span>
+            <span className="text-xs">Upcoming/আসন্ন</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <span className="text-xs">Overdue</span>
+            <span className="text-xs">Overdue/বিলম্বিত</span>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ function VaccinationChart({ childAgeMonths, completedVaccines }) {
     <div className="w-full h-full p-4">
       <div className="relative h-full">
         {/* Chart Title */}
-        <h3 className="text-sm font-medium text-center mb-2">Vaccination Timeline</h3>
+        <h3 className="text-sm font-medium text-center mb-2">Vaccination Timeline/টিকাদানের সময়রেখা</h3>
         
         {/* Chart Area */}
         <div className="relative h-40">
@@ -178,11 +178,11 @@ function VaccinationChart({ childAgeMonths, completedVaccines }) {
           
           {/* X-axis labels */}
           <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-gray-500">
-            <span>Birth</span>
-            <span>3m</span>
-            <span>6m</span>
-            <span>9m</span>
-            <span>12m</span>
+            <span>Birth/জন্ম</span>
+            <span>3m/৩মাস</span>
+            <span>6m/৬মাস</span>
+            <span>9m/৯মাস</span>
+            <span>12m/১২মাস</span>
           </div>
           
           {/* Current age indicator */}
@@ -229,15 +229,15 @@ function VaccinationChart({ childAgeMonths, completedVaccines }) {
         <div className="flex justify-center gap-4 mt-4">
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-xs">Completed</span>
+            <span className="text-xs">Completed/সম্পন্ন</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-gray-400"></div>
-            <span className="text-xs">Upcoming</span>
+            <span className="text-xs">Upcoming/আসন্ন</span>
           </div>
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <span className="text-xs">Overdue</span>
+            <span className="text-xs">Overdue/বিলম্বিত</span>
           </div>
         </div>
       </div>
@@ -247,11 +247,11 @@ function VaccinationChart({ childAgeMonths, completedVaccines }) {
 
 // Helper function to get vaccine due in months
 function getVaccineDueMonths(dueAt) {
-  if (dueAt === "At birth") return 0
-  if (dueAt === "6 weeks") return 1.5
-  if (dueAt === "10 weeks") return 2.5
-  if (dueAt === "14 weeks") return 3.5
-  if (dueAt === "9 months") return 9
+  if (dueAt === "At birth/জন্মের সময়") return 0
+  if (dueAt === "6 weeks/৬ সপ্তাহ") return 1.5
+  if (dueAt === "10 weeks/১০ সপ্তাহ") return 2.5
+  if (dueAt === "14 weeks/১৪ সপ্তাহ") return 3.5
+  if (dueAt === "9 months/৯ মাস") return 9
   return 0
 }
 
@@ -362,20 +362,20 @@ export default function MaternalHealthPage() {
     let csvContent = "data:text/csv;charset=utf-8,"
     
     // ANC visits
-    csvContent += "ANC Visit Schedule\n"
-    csvContent += "Visit Number,Week,Name,Description,Status\n"
+    csvContent += "ANC Visit Schedule/এএনসি সফরের সময়সূচী\n"
+    csvContent += "Visit Number/সফর নম্বর,Week/সপ্তাহ,Name/নাম,Description/বর্ণনা,Status/অবস্থা\n"
     ANC_VISITS.forEach(visit => {
-      const status = completedAncVisits.includes(visit.id) ? "Completed" : 
-                    currentWeek >= visit.week ? "Overdue" : "Upcoming"
+      const status = completedAncVisits.includes(visit.id) ? "Completed/সম্পন্ন" : 
+                    currentWeek >= visit.week ? "Overdue/বিলম্বিত" : "Upcoming/আসন্ন"
       csvContent += `${visit.id},${visit.week},"${visit.name}","${visit.description}",${status}\n`
     })
     
     // Vaccines
-    csvContent += "\nVaccination Schedule\n"
-    csvContent += "Vaccine Name,Due At,Description,Status\n"
+    csvContent += "\nVaccination Schedule/টিকাদানের সময়সূচী\n"
+    csvContent += "Vaccine Name/টিকার নাম,Due At/তারিখ,Description/বর্ণনা,Status/অবস্থা\n"
     VACCINE_SCHEDULE.forEach(vaccine => {
-      const status = completedVaccines.includes(vaccine.id) ? "Completed" : 
-                    childAgeMonths >= getVaccineDueMonths(vaccine.dueAt) ? "Overdue" : "Upcoming"
+      const status = completedVaccines.includes(vaccine.id) ? "Completed/সম্পন্ন" : 
+                    childAgeMonths >= getVaccineDueMonths(vaccine.dueAt) ? "Overdue/বিলম্বিত" : "Upcoming/আসন্ন"
       csvContent += `"${vaccine.name}","${vaccine.dueAt}","${vaccine.description}",${status}\n`
     })
     
@@ -404,8 +404,8 @@ export default function MaternalHealthPage() {
                 <Baby className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Maternal & Child Health Tracker</h1>
-                <p className="text-sm text-muted-foreground">Monitor pregnancy & child vaccination journey</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">Maternal & Child Health Tracker/মাতৃ ও শিশু স্বাস্থ্য ট্র্যাকার</h1>
+                <p className="text-sm text-muted-foreground">Monitor pregnancy & child vaccination journey/গর্ভাবস্থা এবং শিশু টিকাদান যাত্রা পর্যবেক্ষণ করুন</p>
               </div>
             </div>
           </div>
@@ -416,8 +416,8 @@ export default function MaternalHealthPage() {
       <div className="container mx-auto px-4 py-8">
         <Tabs defaultValue="pregnancy" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-6">
-            <TabsTrigger value="pregnancy">Pregnancy Tracker</TabsTrigger>
-            <TabsTrigger value="child">Child Vaccination</TabsTrigger>
+            <TabsTrigger value="pregnancy">Pregnancy Tracker/গর্ভাবস্থা ট্র্যাকার</TabsTrigger>
+            <TabsTrigger value="child">Child Vaccination/শিশু টিকাদান</TabsTrigger>
           </TabsList>
           
           {/* Pregnancy Tracker Tab */}
@@ -428,15 +428,15 @@ export default function MaternalHealthPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Calendar className="h-5 w-5 text-pink-500" />
-                    Pregnancy Details
+                    Pregnancy Details/গর্ভাবস্থার বিবরণ
                   </CardTitle>
                   <CardDescription>
-                    Enter your LMP or due date to track your pregnancy
+                    Enter your LMP or due date to track your pregnancy/আপনার গর্ভাবস্থা ট্র্যাক করতে আপনার LMP বা নির্ধারিত তারিখ লিখুন
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="lmp">Last Menstrual Period</Label>
+                    <Label htmlFor="lmp">Last Menstrual Period/শেষ মাসিক</Label>
                     <Input
                       id="lmp"
                       type="date"
@@ -445,7 +445,7 @@ export default function MaternalHealthPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="due">Due Date</Label>
+                    <Label htmlFor="due">Due Date/নির্ধারিত তারিখ</Label>
                     <Input
                       id="due"
                       type="date"
@@ -456,7 +456,7 @@ export default function MaternalHealthPage() {
                   {currentWeek > 0 && (
                     <div className="p-3 bg-pink-50 rounded-lg">
                       <p className="text-sm font-medium text-pink-800">
-                        Current Week: {currentWeek} of 40
+                        Current Week: {currentWeek} of 40/বর্তমান সপ্তাহ: {currentWeek} এর ৪০
                       </p>
                       <Progress value={(currentWeek / 40) * 100} className="mt-2" />
                     </div>
@@ -469,10 +469,10 @@ export default function MaternalHealthPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-pink-500" />
-                    ANC Visit Progress Chart
+                    ANC Visit Progress Chart/এএনসি সফর অগ্রগতি চার্ট
                   </CardTitle>
                   <CardDescription>
-                    Visual timeline of your antenatal care visits
+                    Visual timeline of your antenatal care visits/আপনার প্রসবপূর্ব যত্নের সফরের ভিজ্যুয়াল সময়রেখা
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -484,15 +484,15 @@ export default function MaternalHealthPage() {
             {/* ANC Visit List */}
             <Card>
               <CardHeader>
-                <CardTitle>ANC Visit Schedule</CardTitle>
+                <CardTitle>ANC Visit Schedule/এএনসি সফরের সময়সূচী</CardTitle>
                 <CardDescription>
-                  Track your Antenatal Care visits
+                  Track your Antenatal Care visits/আপনার প্রসবপূর্ব যত্নের সফর ট্র্যাক করুন
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium">
-                    {completedAncVisits.length} of {ANC_VISITS.length} visits completed
+                    {completedAncVisits.length} of {ANC_VISITS.length} visits completed/সম্পন্ন হয়েছে
                   </span>
                   <span className="text-sm text-muted-foreground">{ancProgress}%</span>
                 </div>
@@ -528,7 +528,7 @@ export default function MaternalHealthPage() {
                           size="sm"
                           onClick={() => toggleAncVisit(visit.id)}
                         >
-                          {isCompleted ? "Completed" : "Mark as Done"}
+                          {isCompleted ? "Completed/সম্পন্ন" : "Mark as Done"}
                         </Button>
                       </div>
                     )
@@ -546,15 +546,15 @@ export default function MaternalHealthPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Baby className="h-5 w-5 text-blue-500" />
-                    Child Details
+                    Child Details/শিশুর বিবরণ
                   </CardTitle>
                   <CardDescription>
-                    Enter your child's date of birth to track vaccinations
+                    Enter your child's date of birth to track vaccinations/টিকাদান ট্র্যাক করতে আপনার শিশুর জন্ম তারিখ লিখুন
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="dob">Date of Birth</Label>
+                    <Label htmlFor="dob">Date of Birth/জন্ম তারিখ</Label>
                     <Input
                       id="dob"
                       type="date"
@@ -565,7 +565,7 @@ export default function MaternalHealthPage() {
                   {childAgeMonths > 0 && (
                     <div className="p-3 bg-blue-50 rounded-lg">
                       <p className="text-sm font-medium text-blue-800">
-                        Current Age: {childAgeMonths} months
+                        Current Age: {childAgeMonths} months/বর্তমান বয়স: {childAgeMonths} মাস
                       </p>
                     </div>
                   )}
@@ -577,10 +577,10 @@ export default function MaternalHealthPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-blue-500" />
-                    Vaccination Progress Chart
+                    Vaccination Progress Chart/টিকাদান অগ্রগতি চার্ট
                   </CardTitle>
                   <CardDescription>
-                    Visual timeline of your child's vaccination schedule
+                    Visual timeline of your child's vaccination schedule/আপনার শিশুর টিকাদানের সময়সূচীর ভিজ্যুয়াল সময়রেখা
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -592,15 +592,15 @@ export default function MaternalHealthPage() {
             {/* Vaccination List */}
             <Card>
               <CardHeader>
-                <CardTitle>Vaccination Schedule</CardTitle>
+                <CardTitle>Vaccination Schedule/টিকাদানের সময়সূচী</CardTitle>
                 <CardDescription>
-                  Track your child's EPI vaccination schedule (Bangladesh)
+                  Track your child's EPI vaccination schedule (Bangladesh)/আপনার শিশুর ইপিআই টিকাদানের সময়সূচী ট্র্যাক করুন (বাংলাদেশ)
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium">
-                    {completedVaccines.length} of {VACCINE_SCHEDULE.length} vaccines completed
+                    {completedVaccines.length} of {VACCINE_SCHEDULE.length} vaccines completed/সম্পন্ন হয়েছে
                   </span>
                   <span className="text-sm text-muted-foreground">{vaccineProgress}%</span>
                 </div>
@@ -637,7 +637,7 @@ export default function MaternalHealthPage() {
                           size="sm"
                           onClick={() => toggleVaccine(vaccine.id)}
                         >
-                          {isCompleted ? "Completed" : "Mark as Done"}
+                          {isCompleted ? "Completed/সম্পন্ন" : "Mark as Done"}
                         </Button>
                       </div>
                     )
@@ -651,9 +651,9 @@ export default function MaternalHealthPage() {
         {/* Metrics & Reminders */}
         <Card className="mt-6">
           <CardHeader>
-            <CardTitle>Metrics & Reminders</CardTitle>
+            <CardTitle>Metrics & Reminders/মেট্রিক্স এবং স্মরণীয়</CardTitle>
             <CardDescription>
-              Overview of your maternal and child health journey
+              Overview of your maternal and child health journey/আপনার মাতৃ ও শিশু স্বাস্থ্য যাত্রার সারসংক্ষেপ
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -661,7 +661,7 @@ export default function MaternalHealthPage() {
               <div className="p-4 bg-pink-50 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-pink-800">ANC Visits</p>
+                    <p className="text-sm font-medium text-pink-800">ANC Visits/এএনসি সফর</p>
                     <p className="text-2xl font-bold text-pink-900">
                       {completedAncVisits.length}/{ANC_VISITS.length}
                     </p>
@@ -676,7 +676,7 @@ export default function MaternalHealthPage() {
               <div className="p-4 bg-blue-50 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-blue-800">Vaccines</p>
+                    <p className="text-sm font-medium text-blue-800">Vaccines/টিকা</p>
                     <p className="text-2xl font-bold text-blue-900">
                       {completedVaccines.length}/{VACCINE_SCHEDULE.length}
                     </p>
@@ -691,7 +691,7 @@ export default function MaternalHealthPage() {
               <div className="p-4 bg-amber-50 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-amber-800">Overdue</p>
+                    <p className="text-sm font-medium text-amber-800">Overdue/বিলম্বিত</p>
                     <p className="text-2xl font-bold text-amber-900">
                       {ANC_VISITS.filter(v => currentWeek > v.week && !completedAncVisits.includes(v.id)).length +
                       VACCINE_SCHEDULE.filter(v => childAgeMonths > getVaccineDueMonths(v.dueAt) && !completedVaccines.includes(v.id)).length}
@@ -701,13 +701,13 @@ export default function MaternalHealthPage() {
                     <AlertCircle className="h-6 w-6 text-amber-600" />
                   </div>
                 </div>
-                <p className="text-xs text-amber-700 mt-2">Items requiring attention</p>
+                <p className="text-xs text-amber-700 mt-2">Items requiring attention/মনোযোগ প্রয়োজনীয় আইটেম</p>
               </div>
               
               <div className="p-4 bg-green-50 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-green-800">Completed</p>
+                    <p className="text-sm font-medium text-green-800">Completed/সম্পন্ন</p>
                     <p className="text-2xl font-bold text-green-900">
                       {completedAncVisits.length + completedVaccines.length}
                     </p>
@@ -716,7 +716,7 @@ export default function MaternalHealthPage() {
                     <CheckCircle className="h-6 w-6 text-green-600" />
                   </div>
                 </div>
-                <p className="text-xs text-green-700 mt-2">Total items completed</p>
+                <p className="text-xs text-green-700 mt-2">Total items completed/সর্বমোট সম্পন্ন আইটেম</p>
               </div>
             </div>
             

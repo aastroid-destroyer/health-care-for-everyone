@@ -9,70 +9,76 @@ import { useState } from "react"
 const volunteers = [
   {
     id: 1,
-    name: "Dr. Fatema Khan",
-    specialization: "General Physician",
-    bio: "20+ years of experience in primary care",
-    location: "Dhaka",
+    name: "Khoyrul",
+    specialization: "General Physician / সাধারণ চিকিৎসক",
+    bio: "20+ years of experience in primary care / প্রাথমিক স্বাস্থ্যসেবায় ২০+ বছরের অভিজ্ঞতা",
+    location: "Dhaka / ঢাকা",
     rating: 4.9,
-    distance: "1.2 km",
+    distance: "1.2 km / ১.২ কিমি",
     phone: "+880-17-1234567",
   },
   {
     id: 2,
-    name: "Nurse Aminul Islam",
-    specialization: "Maternal Health",
-    bio: "Specialized in prenatal and postnatal care",
-    location: "Dhaka",
+    name: "Samia Porosh",
+    specialization: "Maternal Health / মাতৃস্বাস্থ্য",
+    bio: "Specialized in prenatal and postnatal care / প্রসবপূর্ব ও প্রসবোত্তর যত্নে বিশেষজ্ঞ",
+    location: "Dhaka / ঢাকা",
     rating: 4.8,
-    distance: "2.1 km",
+    distance: "2.1 km / ২.১ কিমি",
     phone: "+880-17-9876543",
   },
   {
     id: 3,
-    name: "Counselor Shahnaz Akter",
-    specialization: "Mental Health",
-    bio: "Certified therapist and counselor",
-    location: "Dhaka",
+    name: "Maleha",
+    specialization: "Mental Health / মানসিক স্বাস্থ্য",
+    bio: "Certified therapist and counselor / সার্টিফাইড থেরাপিস্ট এবং কাউন্সেলর",
+    location: "Dhaka / ঢাকা",
     rating: 4.9,
-    distance: "1.5 km",
+    distance: "1.5 km / ১.৫ কিমি",
     phone: "+880-17-5555555",
   },
   {
     id: 4,
-    name: "CHW Karim Ahmed",
-    specialization: "Community Health",
-    bio: "Health education and community outreach",
-    location: "Dhaka",
+    name: "Protim",
+    specialization: "Community Health / সম্প্রদায় স্বাস্থ্য",
+    bio: "Health education and community outreach / স্বাস্থ্য শিক্ষা এবং সম্প্রদায়ভিত্তিক কার্যক্রম",
+    location: "Dhaka / ঢাকা",
     rating: 4.7,
-    distance: "2.5 km",
+    distance: "2.5 km / ২.৫ কিমি",
     phone: "+880-17-7777777",
   },
 ]
 
 export default function VolunteerDirectory() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [selectedSpecialization, setSelectedSpecialization] = useState("All")
+  const [selectedSpecialization, setSelectedSpecialization] = useState("All / সব")
 
   const filteredVolunteers = volunteers.filter((vol) => {
     const matchesSearch =
       vol.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       vol.bio.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesSpecialization = selectedSpecialization === "All" || vol.specialization === selectedSpecialization
+    const matchesSpecialization = selectedSpecialization === "All / সব" || vol.specialization === selectedSpecialization
     return matchesSearch && matchesSpecialization
   })
 
-  const specializations = ["All", "General Physician", "Maternal Health", "Mental Health", "Community Health"]
+  const specializations = [
+    "All / সব",
+    "General Physician / সাধারণ চিকিৎসক",
+    "Maternal Health / মাতৃস্বাস্থ্য",
+    "Mental Health / মানসিক স্বাস্থ্য",
+    "Community Health / সম্প্রদায় স্বাস্থ্য",
+  ]
 
   return (
     <div className="space-y-6">
       {/* Search and Filter */}
       <Card className="border-0 shadow-sm">
         <CardHeader>
-          <CardTitle className="text-base">Find Volunteers</CardTitle>
+          <CardTitle className="text-base">Find Volunteers / স্বেচ্ছাসেবক খুঁজুন</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <Input
-            placeholder="Search by name or expertise..."
+            placeholder="Search by name or expertise... / নাম বা দক্ষতার ভিত্তিতে অনুসন্ধান করুন..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -124,11 +130,11 @@ export default function VolunteerDirectory() {
               <div className="flex gap-2">
                 <Button size="sm" className="flex-1 gap-2">
                   <Phone className="h-4 w-4" />
-                  Call
+                  Call / কল করুন
                 </Button>
                 <Button size="sm" variant="outline" className="flex-1 gap-2 bg-transparent">
                   <MessageCircle className="h-4 w-4" />
-                  Message
+                  Message / বার্তা
                 </Button>
               </div>
             </CardContent>

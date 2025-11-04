@@ -30,13 +30,13 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 const MOCK_EVENTS = [
   {
     id: "1",
-    title: "Free Diabetes Screening Camp",
+    title: "Free Diabetes Screening Camp / বিনামূল্যে ডায়াবেটিস স্ক্রিনিং ক্যাম্প",
     type: "screening",
-    description: "Get your blood sugar checked and receive expert advice on managing diabetes.",
+    description: "Get your blood sugar checked and receive expert advice on managing diabetes. / আপনার রক্তের শর্করা পরীক্ষা করুন এবং ডায়াবেটিস পরিচালনার জন্য বিশেষজ্ঞ পরামর্শ নিন।",
     date: new Date(new Date().setDate(new Date().getDate() + 5)), // 5 days from now
     time: "9:00 AM - 1:00 PM",
-    location: "Mirpur Community Clinic, Dhaka",
-    organizer: "Bangladesh Diabetes Association",
+    location: "Mirpur Community Clinic, Dhaka / মিরপুর কমিউনিটি ক্লিনিক, ঢাকা",
+    organizer: "Bangladesh Diabetes Association / বাংলাদেশ ডায়াবেটিস সমিতি",
     attendees: 45,
     capacity: 100,
     isFree: true,
@@ -44,13 +44,13 @@ const MOCK_EVENTS = [
   },
   {
     id: "2",
-    title: "Children's Vaccination Drive",
+    title: "Children's Vaccination Drive / শিশুদের টিকাদান কর্মসূচি",
     type: "drive",
-    description: "Essential immunizations for children under 5. Bring your vaccination card.",
+    description: "Essential immunizations for children under 5. Bring your vaccination card. / ৫ বছরের নিচের শিশুদের জন্য প্রয়োজনীয় টিকা। আপনার টিকা কার্ড নিয়ে আসুন।",
     date: new Date(new Date().setDate(new Date().getDate() + 10)), // 10 days from now
     time: "10:00 AM - 3:00 PM",
-    location: "Dhanmondi Maternal & Child Health Center",
-    organizer: "UNICEF & Ministry of Health",
+    location: "Dhanmondi Maternal & Child Health Center / ধানমণ্ডি মাতৃ ও শিশু স্বাস্থ্য কেন্দ্র",
+    organizer: "UNICEF & Ministry of Health / ইউনিসেফ ও স্বাস্থ্য মন্ত্রণালয়",
     attendees: 120,
     capacity: 150,
     isFree: true,
@@ -58,13 +58,13 @@ const MOCK_EVENTS = [
   },
   {
     id: "3",
-    title: "Maternal Health Workshop",
+    title: "Maternal Health Workshop / মাতৃস্বাস্থ্য কর্মশালা",
     type: "workshop",
-    description: "Learn about nutrition, prenatal care, and postnatal support for mothers.",
+    description: "Learn about nutrition, prenatal care, and postnatal support for mothers. / মায়েদের পুষ্টি, প্রসবপূর্ব যত্ন এবং প্রসবোত্তর সহায়তা সম্পর্কে জানুন।",
     date: new Date(new Date().setDate(new Date().getDate() + 12)), // 12 days from now
     time: "2:00 PM - 4:00 PM",
-    location: "Kurmitola General Hospital, Dhaka",
-    organizer: "Bangladesh Women's Health Coalition",
+    location: "Kurmitola General Hospital, Dhaka / কুর্মিটোলা জেনারেল হাসপাতাল, ঢাকা",
+    organizer: "Bangladesh Women's Health Coalition / বাংলাদেশ নারী স্বাস্থ্য জোট",
     attendees: 25,
     capacity: 40,
     isFree: true,
@@ -72,13 +72,13 @@ const MOCK_EVENTS = [
   },
   {
     id: "4",
-    title: "General Health Check-up Camp",
+    title: "General Health Check-up Camp / সাধারণ স্বাস্থ্য পরীক্ষা ক্যাম্প",
     type: "camp",
-    description: "Comprehensive health check-ups including blood pressure, weight, and basic consultations.",
+    description: "Comprehensive health check-ups including blood pressure, weight, and basic consultations. / রক্তচাপ, ওজন এবং প্রাথমিক পরামর্শ সহ বিস্তৃত স্বাস্থ্য পরীক্ষা।",
     date: new Date(new Date().setDate(new Date().getDate() - 10)), // 10 days ago
     time: "8:00 AM - 12:00 PM",
-    location: "Uttara Health Center",
-    organizer: "Red Crescent Society",
+    location: "Uttara Health Center / উত্তরা স্বাস্থ্য কেন্দ্র",
+    organizer: "Red Crescent Society / রেড ক্রিসেন্ট সোসাইটি",
     attendees: 200,
     capacity: 200,
     isFree: true,
@@ -86,13 +86,13 @@ const MOCK_EVENTS = [
   },
   {
     id: "5",
-    title: "Mental Health Awareness Session",
+    title: "Mental Health Awareness Session / মানসিক স্বাস্থ্য সচেতনতা সেশন",
     type: "workshop",
-    description: "A safe space to discuss stress, anxiety, and learn coping mechanisms.",
+    description: "A safe space to discuss stress, anxiety, and learn coping mechanisms. / চাপ, উদ্বেগ নিয়ে আলোচনা এবং মোকাবেলার কৌশল শেখার একটি নিরাপদ জায়গা।",
     date: new Date(new Date().setDate(new Date().getDate() + 20)), // 20 days from now
     time: "4:00 PM - 6:00 PM",
-    location: "Online via Zoom",
-    organizer: "Moner Bondhu",
+    location: "Online via Zoom / অনলাইনে জুমের মাধ্যমে",
+    organizer: "Moner Bondhu / মনের বন্ধু",
     attendees: 80,
     capacity: 200,
     isFree: true,
@@ -201,7 +201,7 @@ function EventCard({ event, isRSVPed, onRSVP }) {
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users className="h-4 w-4" />
-            <span>{event.attendees} / {event.capacity} attending</span>
+            <span>{event.attendees} / {event.capacity} attending / অংশগ্রহণকারী</span>
           </div>
         </div>
       </CardContent>
@@ -214,14 +214,14 @@ function EventCard({ event, isRSVPed, onRSVP }) {
               variant={isRSVPed ? "secondary" : "default"}
               className="flex-1"
             >
-              {isRSVPed ? <><Check className="w-4 h-4 mr-2" /> Going</> : 'RSVP'}
+              {isRSVPed ? <><Check className="w-4 h-4 mr-2" /> Going / যাবেন</> : 'Interested / আগ্রহী'}
             </Button>
           )}
           <Button 
             variant="outline" 
             size="icon"
             onClick={() => generateICSFile(event)}
-            title="Add to Calendar"
+            title="Add to Calendar / ক্যালেন্ডারে যোগ করুন"
           >
             <Download className="h-4 w-4" />
           </Button>
@@ -295,10 +295,10 @@ export default function CommunityHealthEventsPage() {
               </div>
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
-                  Community Health Events
+                  Community Health Events / সম্প্রদায় স্বাস্থ্য ইভেন্ট
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                  Discover health camps, screenings, and workshops near you
+                  Discover health camps, screenings, and workshops near you / আপনার কাছাকাছি স্বাস্থ্য ক্যাম্প, স্ক্রিনিং এবং কর্মশালা আবিষ্কার করুন
                 </p>
               </div>
             </div>
@@ -313,35 +313,25 @@ export default function CommunityHealthEventsPage() {
           <CardHeader className="pb-4">
             <CardTitle className="text-lg flex items-center gap-2">
               <Filter className="h-5 w-5" />
-              Find Events
+              Find Events / ইভেন্ট খুঁজুন
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
-                <Label htmlFor="event-filter" className="text-sm font-medium">Event Type</Label>
+                <Label htmlFor="event-filter" className="text-sm font-medium">Event Type / ইভেন্টের ধরন</Label>
                 <Select value={filter} onValueChange={setFilter}>
                   <SelectTrigger id="event-filter">
-                    <SelectValue placeholder="All types" />
+                    <SelectValue placeholder="All types / সব ধরন" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Events</SelectItem>
-                    <SelectItem value="camp">Health Camp</SelectItem>
-                    <SelectItem value="screening">Screening</SelectItem>
-                    <SelectItem value="drive">Vaccination Drive</SelectItem>
-                    <SelectItem value="workshop">Workshop</SelectItem>
+                    <SelectItem value="all">All Events / সব ইভেন্ট</SelectItem>
+                    <SelectItem value="camp">Health Camp / স্বাস্থ্য ক্যাম্প</SelectItem>
+                    <SelectItem value="screening">Screening / স্ক্রিনিং</SelectItem>
+                    <SelectItem value="drive">Vaccination Drive / টিকাদান কর্মসূচি</SelectItem>
+                    <SelectItem value="workshop">Workshop / কর্মশালা</SelectItem>
                   </SelectContent>
                 </Select>
-              </div>
-              <div className="flex items-center space-x-2 pt-6">
-                <Switch
-                  id="show-past"
-                  checked={showPastEvents}
-                  onCheckedChange={setShowPastEvents}
-                />
-                <Label htmlFor="show-past" className="text-sm font-medium">
-                  Show past events
-                </Label>
               </div>
             </div>
           </CardContent>
@@ -362,9 +352,9 @@ export default function CommunityHealthEventsPage() {
         ) : (
           <Alert className="mt-10">
             <AlertCircle className="h-4 w-4" />
-            <AlertTitle>No Events Found</AlertTitle>
+            <AlertTitle>No Events Found / কোন ইভেন্ট পাওয়া যায়নি</AlertTitle>
             <AlertDescription>
-              There are no events matching your current filters. Try adjusting the event type or including past events.
+              There are no events matching your current filters. Try adjusting the event type or including past events. / আপনার বর্তমান ফিল্টারের সাথে মেলে এমন কোন ইভেন্ট নেই। ইভেন্টের ধরন সামঞ্জস্য করার চেষ্টা করুন বা অতীত ইভেন্ট অন্তর্ভুক্ত করুন।
             </AlertDescription>
           </Alert>
         )}

@@ -7,58 +7,58 @@ import { useState } from "react"
 const healthResources = [
   {
     id: 1,
-    name: "Community Health Center",
+    name: "Community Health Center/সম্প্রদায় স্বাস্থ্য কেন্দ্র",
     type: "clinic",
     distance: 0.8,
     lat: 23.8103,
     lng: 90.4125,
     phone: "+880-2-9134567",
     hours: "8:00 AM - 6:00 PM",
-    services: ["General Checkup", "Vaccination", "Maternal Care"],
+    services: ["General Checkup/সাধারণ পরীক্ষা", "Vaccination/টিকাদান", "Maternal Care/মাতৃস্বাস্থ্য সেবা"],
   },
   {
     id: 2,
-    name: "Emergency Medical Unit",
+    name: "Emergency Medical Unit/জরুরি চিকিৎসা ইউনিট",
     type: "hospital",
     distance: 1.2,
     lat: 23.815,
     lng: 90.42,
     phone: "+880-2-9123456",
     hours: "24/7",
-    services: ["Emergency", "Surgery", "ICU"],
+    services: ["Emergency/জরুরি", "Surgery/অস্ত্রোপচার", "ICU"],
   },
   {
     id: 3,
-    name: "Mental Health Support Center",
+    name: "Mental Health Support Center/মানসিক স্বাস্থ্য সহায়তা কেন্দ্র",
     type: "mental-health",
     distance: 1.5,
     lat: 23.805,
     lng: 90.405,
     phone: "+880-2-9145678",
     hours: "10:00 AM - 8:00 PM",
-    services: ["Counseling", "Therapy", "Crisis Support"],
+    services: ["Counseling/পরামর্শ", "Therapy/থেরাপি", "Crisis Support/সংকট সহায়তা"],
   },
   {
     id: 4,
-    name: "Maternal & Child Health Clinic",
+    name: "Maternal & Child Health Clinic/মাতৃ ও শিশু স্বাস্থ্য ক্লিনিক",
     type: "maternal",
     distance: 2.1,
     lat: 23.82,
     lng: 90.43,
     phone: "+880-2-9156789",
     hours: "9:00 AM - 5:00 PM",
-    services: ["Prenatal Care", "Vaccination", "Baby Care"],
+    services: ["Prenatal Care/প্রসবপূর্ব সেবা", "Vaccination/টিকাদান", "Baby Care/শিশু যত্ন"],
   },
   {
     id: 5,
-    name: "Community Health Worker Hub",
+    name: "Community Health Worker Hub/সম্প্রদায় স্বাস্থ্যকর্মী হাব",
     type: "clinic",
     distance: 2.5,
     lat: 23.795,
     lng: 90.395,
     phone: "+880-2-9167890",
     hours: "8:00 AM - 4:00 PM",
-    services: ["Health Education", "Checkups", "Referrals"],
+    services: ["Health Education/স্বাস্থ্য শিক্ষা", "Checkups/পরীক্ষা", "Referrals/রেফারেল"],
   },
 ]
 
@@ -78,13 +78,13 @@ function getTypeColor(type) {
 function getTypeLabel(type) {
   switch (type) {
     case "hospital":
-      return "Hospital"
+      return "Hospital/হাসপাতাল"
     case "mental-health":
-      return "Mental Health"
+      return "Mental Health/মানসিক স্বাস্থ্য"
     case "maternal":
-      return "Maternal Care"
+      return "Maternal Care/মাতৃস্বাস্থ্য সেবা"
     default:
-      return "Clinic"
+      return "Clinic/ক্লিনিক"
   }
 }
 
@@ -96,7 +96,7 @@ export default function HealthMap() {
       {/* Interactive Map Visualization */}
       <Card className="border-0 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <CardHeader>
-          <CardTitle>Community Health Resources</CardTitle>
+          <CardTitle>Community Health Resources/সম্প্রদায় স্বাস্থ্য সম্পদ</CardTitle>
         </CardHeader>
         <CardContent>
           {/* Map Grid Visualization */}
@@ -149,22 +149,22 @@ export default function HealthMap() {
 
             {/* Legend */}
             <div className="absolute bottom-4 left-4 bg-white dark:bg-card rounded-lg p-3 shadow-lg text-xs space-y-1 z-30">
-              <p className="font-semibold mb-2">Legend</p>
+              <p className="font-semibold mb-2">Legend/কিংবদন্তি</p>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full" />
-                <span>Clinic</span>
+                <span>Clinic/ক্লিনিক</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full" />
-                <span>Hospital</span>
+                <span>Hospital/হাসপাতাল</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-purple-500 rounded-full" />
-                <span>Mental Health</span>
+                <span>Mental Health/মানসিক স্বাস্থ্য</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-pink-500 rounded-full" />
-                <span>Maternal</span>
+                <span>Maternal/মাতৃস্বাস্থ্য</span>
               </div>
             </div>
           </div>
@@ -198,16 +198,16 @@ export default function HealthMap() {
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium">Distance</p>
+                    <p className="text-sm font-medium">Distance/দূরত্ব</p>
                     <p className="text-xs text-muted-foreground">
-                      {healthResources.find((r) => r.id === selectedResource)?.distance} km away
+                      {healthResources.find((r) => r.id === selectedResource)?.distance} km away/কিমি দূরে
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium">Contact</p>
+                    <p className="text-sm font-medium">Contact/যোগাযোগ</p>
                     <p className="text-xs text-muted-foreground">
                       {healthResources.find((r) => r.id === selectedResource)?.phone}
                     </p>
@@ -216,14 +216,14 @@ export default function HealthMap() {
                 <div className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-sm font-medium">Hours</p>
+                    <p className="text-sm font-medium">Hours/সময়</p>
                     <p className="text-xs text-muted-foreground">
                       {healthResources.find((r) => r.id === selectedResource)?.hours}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm font-medium mb-2">Services</p>
+                  <p className="text-sm font-medium mb-2">Services/সেবাসমূহ</p>
                   <div className="flex flex-wrap gap-2">
                     {healthResources
                       .find((r) => r.id === selectedResource)

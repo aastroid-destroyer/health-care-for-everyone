@@ -7,24 +7,24 @@ import { Download } from "lucide-react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from "recharts"
 
 const checkInHistory = [
-  { date: "Today", mood: "Good", score: 7 },
-  { date: "Yesterday", mood: "Neutral", score: 6 },
-  { date: "2 days ago", mood: "Good", score: 7 },
-  { date: "3 days ago", mood: "Excellent", score: 8 },
-  { date: "4 days ago", mood: "Good", score: 7 },
+  { date: "Today/আজ", mood: "Good/ভালো", score: 7 },
+  { date: "Yesterday/গতকাল", mood: "Neutral/নিরপেক্ষ", score: 6 },
+  { date: "2 days ago/২ দিন আগে", mood: "Good/ভালো", score: 7 },
+  { date: "3 days ago/৩ দিন আগে", mood: "Excellent/চমৎকার", score: 8 },
+  { date: "4 days ago/৪ দিন আগে", mood: "Good/ভালো", score: 7 },
 ]
 
 function getMoodColor(mood) {
   switch (mood) {
-    case "Stressed":
+    case "Stressed/উদ্বিগ্ন":
       return "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-200"
-    case "Anxious":
+    case "Anxious/উদ্বেগিত":
       return "bg-orange-100 text-orange-800 dark:bg-orange-950/40 dark:text-orange-200"
-    case "Neutral":
+    case "Neutral/নিরপেক্ষ":
       return "bg-yellow-100 text-yellow-800 dark:bg-yellow-950/40 dark:text-yellow-200"
-    case "Good":
+    case "Good/ভালো":
       return "bg-lime-100 text-lime-800 dark:bg-lime-950/40 dark:text-lime-200"
-    case "Excellent":
+    case "Excellent/চমৎকার":
       return "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-200"
     default:
       return "bg-gray-100 text-gray-800"
@@ -37,8 +37,8 @@ const CustomTooltip = ({ active, payload }) => {
     return (
       <div className="bg-background border rounded-md shadow-md p-2">
         <p className="text-sm font-medium">{`${payload[0].payload.date}`}</p>
-        <p className="text-sm">{`Mood Score: ${payload[0].value}/10`}</p>
-        <p className="text-sm">{`Mood: ${payload[0].payload.mood}`}</p>
+        <p className="text-sm">{`Mood Score/মেজাজ স্কোর: ${payload[0].value}/10`}</p>
+        <p className="text-sm">{`Mood/মেজাজ: ${payload[0].payload.mood}`}</p>
       </div>
     )
   }
@@ -51,9 +51,9 @@ function MentalHealthChart() {
   const chartData = [...checkInHistory].reverse().map((entry, index) => ({
     ...entry,
     // Shorten the date for better display on the chart
-    shortDate: entry.date === "Today" ? "T" : 
-               entry.date === "Yesterday" ? "Y" : 
-               entry.date.includes("days ago") ? `${entry.date.split(" ")[0]}d` : 
+    shortDate: entry.date.includes("Today/আজ") ? "T/আ" : 
+               entry.date.includes("Yesterday/গতকাল") ? "Y/গ" : 
+               entry.date.includes("days ago/দিন আগে") ? `${entry.date.split(" ")[0]}d/দি` : 
                entry.date
   }))
 
@@ -105,7 +105,7 @@ function MentalHealthChart() {
 const exportMentalHealthData = () => {
   // Create CSV content
   let csvContent = "data:text/csv;charset=utf-8,"
-  csvContent += "Date,Mood,Score\n"
+  csvContent += "Date/তারিখ,Mood/মেজাজ,Score/স্কোর\n"
   
   // Add each entry to the CSV
   checkInHistory.forEach(entry => {
@@ -126,7 +126,7 @@ export default function CheckinHistory() {
   return (
     <Card className="border-0 shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-base">Check-in History</CardTitle>
+        <CardTitle className="text-base">Check-in History/চেক-ইন ইতিহাস</CardTitle>
         <Button 
           variant="outline" 
           size="sm" 
@@ -134,13 +134,13 @@ export default function CheckinHistory() {
           className="flex items-center gap-1"
         >
           <Download className="h-4 w-4" />
-          Export
+          Export/রপ্তানি
         </Button>
       </CardHeader>
       <CardContent>
         {/* Chart Section */}
         <div className="mb-6">
-          <h3 className="text-sm font-medium mb-2">Mood Trend</h3>
+          <h3 className="text-sm font-medium mb-2">Mood Trend/মেজাজের প্রবণতা</h3>
           <MentalHealthChart />
         </div>
         
@@ -153,7 +153,7 @@ export default function CheckinHistory() {
             >
               <div>
                 <p className="text-sm font-medium">{entry.date}</p>
-                <p className="text-xs text-muted-foreground">Score: {entry.score}/10</p>
+                <p className="text-xs text-muted-foreground">Score/স্কোর: {entry.score}/10</p>
               </div>
               <Badge className={getMoodColor(entry.mood)}>{entry.mood}</Badge>
             </div>

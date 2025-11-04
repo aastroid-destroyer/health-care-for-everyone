@@ -8,18 +8,34 @@ import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2, Send } from "lucide-react"
 
 const moodOptions = [
-  { value: 1, label: "Stressed", color: "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-200" },
-  { value: 2, label: "Anxious", color: "bg-orange-100 text-orange-800 dark:bg-orange-950/40 dark:text-orange-200" },
-  { value: 3, label: "Neutral", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-950/40 dark:text-yellow-200" },
-  { value: 4, label: "Good", color: "bg-lime-100 text-lime-800 dark:bg-lime-950/40 dark:text-lime-200" },
-  { value: 5, label: "Excellent", color: "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-200" },
+  { value: 1, label: "Stressed/উদ্বিগ্ন", color: "bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-200" },
+  { value: 2, label: "Anxious/উদ্বেগিত", color: "bg-orange-100 text-orange-800 dark:bg-orange-950/40 dark:text-orange-200" },
+  { value: 3, label: "Neutral/নিরপেক্ষ", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-950/40 dark:text-yellow-200" },
+  { value: 4, label: "Good/ভালো", color: "bg-lime-100 text-lime-800 dark:bg-lime-950/40 dark:text-lime-200" },
+  { value: 5, label: "Excellent/চমৎকার", color: "bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-200" },
 ]
 
 const checkInQuestions = [
-  { id: "sleep", label: "How is your sleep quality?", options: ["Poor", "Fair", "Good", "Excellent"] },
-  { id: "stress", label: "What is your stress level?", options: ["Very High", "High", "Medium", "Low"] },
-  { id: "energy", label: "How is your energy level?", options: ["Low", "Medium", "High", "Very High"] },
-  { id: "support", label: "Do you have adequate support?", options: ["No", "Somewhat", "Yes", "Very Much"] },
+  { 
+    id: "sleep", 
+    label: `How is your sleep quality?/আপনার ঘুমের গুণমান কেমন?`, 
+    options: ["Poor/খারাপ", "Fair/মোটামুটি", "Good/ভালো", "Excellent/চমৎকার"] 
+  },
+  { 
+    id: "stress", 
+    label: "What is your stress level?/আপনার মানসিক চাপের মাত্রা কতটুকু?", 
+    options: ["Very High/খুব বেশি", "High/বেশি", "Medium/মাঝারি", "Low/কম"] 
+  },
+  { 
+    id: "energy", 
+    label: "How is your energy level?/আপনার শক্তির মাত্রা কেমন?", 
+    options: ["Low/কম", "Medium/মাঝারি", "High/বেশি", "Very High/খুব বেশি"] 
+  },
+  { 
+    id: "support", 
+    label: "Do you have adequate support?/আপনি কি পর্যাপ্ত সহায়তা পাচ্ছেন?", 
+    options: ["No/না", "Somewhat/কিছুটা", "Yes/হ্যাঁ", "Very Much/অনেক বেশি"] 
+  },
 ]
 
 export default function MentalHealthCheckin() {
@@ -54,8 +70,8 @@ export default function MentalHealthCheckin() {
       {/* Mood Selection */}
       <Card className="border-0 bg-gradient-to-br from-secondary/10 to-primary/10 shadow-sm">
         <CardHeader>
-          <CardTitle>How are you feeling today?</CardTitle>
-          <CardDescription>Select your current mood level</CardDescription>
+          <CardTitle>How are you feeling today?/আজ আপনি কেমন অনুভব করছেন?</CardTitle>
+          <CardDescription>Select your current mood level/আপনার বর্তমান মেজাজ নির্বাচন করুন</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex gap-2 flex-wrap">
@@ -107,12 +123,12 @@ export default function MentalHealthCheckin() {
       {/* Additional Notes */}
       <Card className="border-0 shadow-sm">
         <CardHeader>
-          <CardTitle className="text-base">Additional Notes</CardTitle>
-          <CardDescription>Share any thoughts or concerns</CardDescription>
+          <CardTitle className="text-base">Additional Notes/অতিরিক্ত মন্তব্য</CardTitle>
+          <CardDescription>Share any thoughts or concerns/যেকোনো চিন্তা বা উদ্বেগ শেয়ার করুন</CardDescription>
         </CardHeader>
         <CardContent>
           <Textarea
-            placeholder="What's on your mind? Any specific concerns or positive thoughts..."
+            placeholder="What's on your mind? Any specific concerns or positive thoughts.../আপনার মনে কী চলছে? কোনো নির্দিষ্ট উদ্বেগ বা ইতিবাচক চিন্তা..."
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             className="min-h-32"
@@ -126,12 +142,12 @@ export default function MentalHealthCheckin() {
           {submitted ? (
             <>
               <CheckCircle2 className="h-4 w-4" />
-              Submitted
+              Submitted/জমা দেওয়া হয়েছে
             </>
           ) : (
             <>
               <Send className="h-4 w-4" />
-              Complete Check-in
+              Complete Check-in/চেক-ইন সম্পূর্ণ করুন
             </>
           )}
         </Button>
@@ -142,7 +158,7 @@ export default function MentalHealthCheckin() {
         <Card className="border-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30">
           <CardContent className="pt-6">
             <p className="text-green-700 dark:text-green-200 font-medium">
-              Thank you! Your mental health check-in has been recorded. Keep taking care of yourself.
+              Thank you! Your mental health check-in has been recorded. Keep taking care of yourself./ধন্যবাদ! আপনার মানসিক স্বাস্থ্য চেক-ইন রেকর্ড করা হয়েছে। নিজের যত্ন নিতে থাকুন।
             </p>
           </CardContent>
         </Card>

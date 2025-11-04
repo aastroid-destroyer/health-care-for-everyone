@@ -5,17 +5,17 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Star } from "lucide-react"
 
 const resources = [
-  { id: 1, name: "Community Health Center", type: "Clinic", distance: "0.8 km", rating: 4.8 },
-  { id: 2, name: "Emergency Medical Unit", type: "Hospital", distance: "1.2 km", rating: 4.5 },
-  { id: 3, name: "Mental Health Support", type: "Counseling", distance: "1.5 km", rating: 4.9 },
-  { id: 4, name: "Maternal & Child Health", type: "Clinic", distance: "2.1 km", rating: 4.7 },
+  { id: 1, name: "Community Health Center/সম্প্রদায় স্বাস্থ্য কেন্দ্র", type: "Clinic/ক্লিনিক", distance: "0.8 km/কিমি", rating: 4.8 },
+  { id: 2, name: "Emergency Medical Unit/জরুরি চিকিৎসা ইউনিট", type: "Hospital/হাসপাতাল", distance: "1.2 km/কিমি", rating: 4.5 },
+  { id: 3, name: "Mental Health Support/মানসিক স্বাস্থ্য সহায়তা", type: "Counseling/পরামর্শ", distance: "1.5 km/কিমি", rating: 4.9 },
+  { id: 4, name: "Maternal & Child Health/মাতৃ ও শিশু স্বাস্থ্য", type: "Clinic/ক্লিনিক", distance: "2.1 km/কিমি", rating: 4.7 },
 ]
 
 export default function ResourceList() {
   return (
     <Card className="border-0 shadow-sm">
       <CardHeader>
-        <CardTitle className="text-base">Nearby Resources</CardTitle>
+        <CardTitle className="text-base">Nearby Resources/নিকটবর্তী সম্পদ</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">

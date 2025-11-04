@@ -65,11 +65,11 @@ export default function Home() {
 
         {/* Quick Actions Grid */}
         <section className="mb-8">
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
             <Link href="/mental-health" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Brain className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">How Are Your Feeling/<br/>আপনি কেমন বোধ করছেন</span>
@@ -78,7 +78,7 @@ export default function Home() {
             <Link href="/health-map" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <MapPin className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Find Resources/<br/>খুঁজে বের করুন</span>
@@ -87,7 +87,7 @@ export default function Home() {
             <Link href="/anonymous-request" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Brain className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Anonymous message/<br/>আপনার গোপন সমস্যা বলুন</span>
@@ -96,7 +96,7 @@ export default function Home() {
             <Link href="/seasonal-tips" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-accent/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Activity className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Health Tips/ <br/>স্বাস্থ্য পরামর্শ</span>
@@ -105,7 +105,7 @@ export default function Home() {
             <Link href="/maternal-health" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all dark:from-pink-950/20"
               >
                 <Baby className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Maternal Track/<br/>মাতৃত্ব পর্যবেক্ষণ</span>
@@ -114,7 +114,7 @@ export default function Home() {
             <Link href="/symptom-awareness" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all dark:from-pink-950/20"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-pink-50/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all dark:from-pink-950/20"
               >
                 <Baby className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Symptom Alert/<br/>ঝুঁকিপূর্ণ রোগের উপসর্গ</span>
@@ -124,7 +124,7 @@ export default function Home() {
             <Link href="/volunteers" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-secondary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Users className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Volunteers/<br/>আপনার সাহায্য সেবায় নিয়যিত যারা</span>
@@ -133,7 +133,7 @@ export default function Home() {
             <Link href="/communities" className="h-full">
               <Button
                 variant="outline"
-                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/10 transition-all"
+                className="h-24 w-full flex flex-col items-center justify-center gap-2 rounded-lg border-2 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:bg-primary/60 hover:shadow-2xl transition-all"
               >
                 <Heart className="h-6 w-6 text-primary" />
                 <span className="text-xs font-semibold text-center">Community/<br/>সকলের সাথে যুক্ত হোন</span>

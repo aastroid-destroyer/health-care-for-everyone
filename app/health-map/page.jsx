@@ -23,8 +23,8 @@ export default function HealthMapPage() {
                 <MapPin className="h-6 w-6 text-accent-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Health Resources Map</h1>
-                <p className="text-sm text-muted-foreground">Find clinics and services near you</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">Health Resources Map/স্বাস্থ্য সম্পদ মানচিত্র</h1>
+                <p className="text-sm text-muted-foreground">Find clinics and services near you/আপনার কাছাকাছি ক্লিনিক এবং পরিষেবাগুলি খুঁজুন</p>
               </div>
             </div>
           </div>

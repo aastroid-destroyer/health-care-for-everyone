@@ -23,8 +23,8 @@ export default function VolunteersPage() {
                 <Users className="h-6 w-6 text-secondary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Volunteer Network</h1>
-                <p className="text-sm text-muted-foreground">Connect with health volunteers in your community</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">Volunteer Network/স্বেচ্ছাসেবক নেটওয়ার্ক</h1>
+                <p className="text-sm text-muted-foreground">Connect with health volunteers in your community/আপনার সম্প্রদায়ের স্বাস্থ্য স্বেচ্ছাসেবকদের সাথে যোগাযোগ করুন</p>
               </div>
             </div>
           </div>

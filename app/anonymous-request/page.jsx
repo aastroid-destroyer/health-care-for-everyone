@@ -16,20 +16,20 @@ const LOCAL_STORAGE_KEY = "anonymousHelpDraft:v1";
 const RESOURCE_CARDS = [
   {
     id: "coping-anxiety",
-    title: "Coping with Anxiety",
-    desc: "Quick breathing exercises, grounding tips, and short activities to calm the mind.",
+    title: "Coping with Anxiety/উদ্বেগ মোকাবেলা করা",
+    desc: "Quick breathing exercises, grounding tips, and short activities to calm the mind./দ্রুত শ্বাসকষ্টকরণ ব্যায়াম, গ্রাউন্ডিং টিপস, এবং মনকে শান্ত করার জন্য স্বল্প কার্যকলাপ।",
     href: "/help/tips/coping-with-anxiety",
   },
   {
     id: "local-volunteers",
-    title: "Nearby Mental Health Volunteers",
-    desc: "Community volunteers available for listening and basic support in your area.",
+    title: "Nearby Mental Health Volunteers/নিকটবর্তী মানসিক স্বাস্থ্য স্বেচ্ছাসেবক",
+    desc: "Community volunteers available for listening and basic support in your area./আপনার এলাকায় শোনার জন্য এবং মৌলিক সহায়তার জন্য সম্প্রদায় স্বেচ্ছাসেবক উপলব্ধ।",
     href: "/help/volunteers",
   },
   {
     id: "emergency-resources",
-    title: "Immediate Support & Hotlines",
-    desc: "If you're in immediate danger or crisis, find urgent help and numbers here.",
+    title: "Immediate Support & Hotlines/তাৎক্ষণিক সহায়তা এবং হটলাইন",
+    desc: "If you're in immediate danger or crisis, find urgent help and numbers here./আপনি যদি তাৎক্ষণিক বিপদে বা সংকটে থাকেন, এখানে জরুরি সাহায্য এবং নম্বর খুঁজুন।",
     href: "/help/emergency",
   },
 ];
@@ -132,8 +132,8 @@ export default function AnonymousHelpCenter() {
                 <Heart className="h-6 w-6 text-accent-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-foreground">Anonymous Help Request</h1>
-                <p className="text-sm text-muted-foreground">We're here to listen — no names, no judgments.</p>
+                <h1 className="text-2xl font-bold tracking-tight text-foreground">Anonymous Help Request/গোপনভাবে সাহায্যের অনুরোধ</h1>
+                <p className="text-sm text-muted-foreground">We're here to listen — no names, no judgments./আমরা শোনার জন্য এখানে আছি — কোন নাম নয়, কোন বিচার নয়।</p>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function AnonymousHelpCenter() {
         >
           <div className="flex flex-col gap-4">
             <label id="anon-help-heading" className="sr-only">
-              Anonymous Help Form
+              Anonymous Help Form/ সাহায্য ফর্ম
             </label>
 
             <div>
@@ -158,9 +158,9 @@ export default function AnonymousHelpCenter() {
                 ref={textareaRef}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="What would you like to share?"
+                placeholder="What would you like to share?/আপনি কী শেয়ার করতে চান?"
                 className="w-full resize-none rounded-xl p-4 bg-background/60 backdrop-blur-sm placeholder:text-muted-foreground text-foreground outline-none focus:ring-2 focus:ring-primary border border-border"
-                aria-label="Your message"
+                aria-label="Your message/আপনার বার্তা"
                 rows={4}
               />
             </div>
@@ -168,25 +168,25 @@ export default function AnonymousHelpCenter() {
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <div className="flex-1 min-w-0">
                 <label htmlFor="category" className="sr-only">
-                  Category
+                  Category/বিভাগ
                 </label>
                 {/* Using shadcn Select for consistent design */}
                 <Select onValueChange={(v) => setCategory(v)} defaultValue={category}>
                   <SelectTrigger id="category" className="w-full rounded-xl bg-background/60 border-border">
-                    <SelectValue placeholder="Select category" />
+                    <SelectValue placeholder="Select category/বিভাগ নির্বাচন করুন" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="mental">Mental Health</SelectItem>
-                    <SelectItem value="physical">Physical Health</SelectItem>
-                    <SelectItem value="emotional">Emotional Support</SelectItem>
-                    <SelectItem value="emergency">Emergency</SelectItem>
+                    <SelectItem value="mental">Mental Health/মানসিক স্বাস্থ্য</SelectItem>
+                    <SelectItem value="physical">Physical Health/শারীরিক স্বাস্থ্য</SelectItem>
+                    <SelectItem value="emotional">Emotional Support/আবেগগত সহায়তা</SelectItem>
+                    <SelectItem value="emergency">Emergency/জরুরি</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Send Anonymously</span>
-                <Switch checked={sendAnonymously} onCheckedChange={() => setSendAnonymously((s) => !s)} aria-label="Send anonymously" />
+                <span className="text-sm text-muted-foreground">Send Anonymously/পাঠিয়ে দিন আপনার পরিচয় গোপন রেখে</span>
+                <Switch checked={sendAnonymously} onCheckedChange={() => setSendAnonymously((s) => !s)} aria-label="Send anonymously/পাঠান" />
               </div>
             </div>
 
@@ -195,11 +195,11 @@ export default function AnonymousHelpCenter() {
                 {loading ? (
                   <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                 ) : null}
-                <span>{loading ? "Sending..." : "Send Help Request"}</span>
+                <span>{loading ? "Sending.../পাঠানো হচ্ছে..." : "Send Help Request/সাহায্য অনুরোধ পাঠান"}</span>
               </Button>
 
               <button type="button" onClick={handleReset} className="ml-auto text-sm underline text-muted-foreground">
-                Reset Draft
+                Reset Draft/ড্রাফট রিসেট করুন
               </button>
             </div>
 
@@ -218,13 +218,13 @@ export default function AnonymousHelpCenter() {
                   </div>
 
                   <div>
-                    <p className="font-medium text-foreground">Your message has been received ❤️</p>
-                    <p className="text-sm text-muted-foreground">We're reviewing it and will respond with resources shortly.</p>
+                    <p className="font-medium text-foreground">Your message has been received ❤️/আপনার বার্তা পাওয়া গেছে ❤️</p>
+                    <p className="text-sm text-muted-foreground">A trained volunteer will contact you within 48 hours./আপনার সাথে ৪৮ ঘন্টার মধ্যে একজন যোগাযোগ করবে</p>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <p className="text-sm text-foreground mb-2">Helpful resources you can explore now:</p>
+                  <p className="text-sm text-foreground mb-2">Helpful resources you can explore now:/এখন আপনি যে সহায়ক সম্পদগুলি অন্বেষণ করতে পারেন:</p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {RESOURCE_CARDS.slice(0, 3).map((r) => (
@@ -242,7 +242,7 @@ export default function AnonymousHelpCenter() {
                             <p className="text-xs text-muted-foreground">{r.desc}</p>
                           </CardContent>
                           <CardFooter>
-                            <span className="text-xs text-primary underline">Open</span>
+                            <span className="text-xs text-primary underline">Open/খুলুন</span>
                           </CardFooter>
                         </Card>
                       </a>
@@ -263,13 +263,13 @@ export default function AnonymousHelpCenter() {
                   <Lock className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm text-foreground">No personal information is stored or shared.</p>
-                  <p className="text-xs text-muted-foreground">Only the message and category (anonymized) are sent to our support team.</p>
+                  <p className="text-sm text-foreground">No personal information is stored or shared./কোনো ব্যক্তিগত তথ্য সংরক্ষণ বা ভাগ করা হয় না।</p>
+                  <p className="text-xs text-muted-foreground">Only the message and category (anonymized) are sent to our support team./শুধুমাত্র বার্তা এবং বিভাগ (্সম্পূর্ণ গোপন) আমাদের সহায়তা দলে পাঠানো হয়।</p>
                 </div>
               </div>
             )}
 
-            <div className="text-xs text-muted-foreground mt-2">Tip: Your draft is saved locally to your device so you won't lose your message on refresh.</div>
+            <div className="text-xs text-muted-foreground mt-2">Tip: Your draft is saved locally to your device so you won't lose your message on refresh./টিপ: আপনার ড্রাফট আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত হয় যাতে রিফ্রেশের পরে আপনি আপনার বার্তা হারাবেন না।</div>
           </div>
         </div>
 
@@ -281,7 +281,7 @@ export default function AnonymousHelpCenter() {
             }`}
           >
             {RESOURCE_CARDS.map((r) => (
-              <a key={r.id} href={r.href} className="block">
+              <div key={r.id} className="block">
                 <Card className="rounded-xl border border-border bg-background/60 backdrop-blur-sm hover:shadow-md transition-shadow">
                   <CardContent>
                     <div className="flex items-start gap-3">
@@ -295,7 +295,7 @@ export default function AnonymousHelpCenter() {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
+              </div>
             ))}
           </div>
         )}
